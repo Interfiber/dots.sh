@@ -14,6 +14,7 @@ with builtins; {
     pavucontrol
     pinentry-qt
     signal-desktop
+    prismlauncher
 
     # wayland
     grim
