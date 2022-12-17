@@ -8,8 +8,15 @@ with builtins; {
   boot.loader.grub.theme = ./minegrub-theme; # Set grub theme
   boot.loader.grub.gfxmodeEfi = "3840x2160"; # Fix grub resolution
 
+  boot.loader.grub.extraEntries = ''
+    menuentry "UEFI Firmware Settings" {
+        fwsetup
+    }
+  '';
+
   boot.loader.efi.canTouchEfiVariables = true; # Allow the bootloader to touch efi vars
   boot.loader.efi.efiSysMountPoint = "/boot/efi"; # EFI system mount point is /boot/efi
+
 
   # Kernel config
   boot.kernelPackages = pkgs.linuxPackages_latest; # Use latest kernel version, not the old NixOS one
