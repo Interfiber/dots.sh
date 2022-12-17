@@ -6,4 +6,6 @@
   <img src="https://img.shields.io/badge/NixOS-unstable-informational.svg?style=flat&logo=nixos" href="https://github.com/nixos/nixpkgs">
 </h1>
 
+![](./assets/preview.png)
+
 ## 📦 Contents
