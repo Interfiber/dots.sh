@@ -29,12 +29,20 @@ log "Formatting codebase..."
 nix run nixpkgs#alejandra -- .
 log "Updating Nix flake lock file..."
 nix flake update
+
 if [[ "$1" == "--only-home-manager" ]]; then 
   log "Building home-manager config flake..."
   homeManagerSetup
   exit 0
 fi
+
+export REBUILD_FLAGS=""
+if [[ "$1" == "--update-grub" ]]; then
+  export REBUILD_FLAGS="--install-bootloader"
+  log "Notice: System update will also update GRUB"
+fi
+
 log "Applying system config..."
-command $AUTHPATH nixos-rebuild switch --flake .#
+command $AUTHPATH nixos-rebuild switch --flake .# $REBUILD_FLAGS
 log "Building home-manager config flake..."
 homeManagerSetup

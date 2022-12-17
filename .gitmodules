@@ -1,0 +1,3 @@
+[submodule "hosts/celeste/system/modules/grub_theme"]
+	path = hosts/celeste/system/modules/grub_theme
+	url = https://github.com/Lxtharia/minegrub-theme
