@@ -13,11 +13,17 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, hyprland, ...}:
-    let system = "x86_64-linux";
+  outputs = {
+    self,
+    nixpkgs,
+    home-manager,
+    hyprland,
+    ...
+  }: let
+    system = "x86_64-linux";
     pkgs = import nixpkgs {
       inherit system;
-      config = { allowUnfree = true; }; # in the future remove discord
+      config = {allowUnfree = true;}; # in the future remove discord
     };
     hostname = "celeste";
     lib = nixpkgs.lib;
@@ -26,24 +32,22 @@
       inherit pkgs;
 
       modules = [
-        hyprland.homeManagerModules.default 
-        { wayland.windowManager.hyprland.enable = true; }
+        hyprland.homeManagerModules.default
+        {wayland.windowManager.hyprland.enable = true;}
         ./hosts/celeste/user/home.nix
       ];
     };
     nixosConfigurations.${hostname} = nixpkgs.lib.nixosSystem {
       inherit system;
-      modules = [ 
+      modules = [
         ./hosts/celeste/system/configuration.nix
       ];
     };
     apps.${system} = {
-      "activate/${hostname}" =
-      let 
+      "activate/${hostname}" = let
         drv = self.outputs.homeConfigurations.${hostname}.activationPackage;
         exePath = "/activate";
-      in
-      {
+      in {
         type = "app";
         program = "${drv}${exePath}";
       };

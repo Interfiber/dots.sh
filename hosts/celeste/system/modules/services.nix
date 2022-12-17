@@ -1,12 +1,8 @@
-{ pkgs, ... }:
-
-with builtins;
-
-{
-
+{pkgs, ...}:
+with builtins; {
   # Pipewire
   hardware.pulseaudio.enable = false; # Disable pulseaudio
-  
+
   services.pipewire.enable = true;
   services.pipewire.alsa.enable = true;
   services.pipewire.pulse.enable = true;
@@ -20,7 +16,7 @@ with builtins;
     enable = true;
     wlr.enable = true;
     # gtk portal needed to make gtk apps happy
-    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+    extraPortals = [pkgs.xdg-desktop-portal-gtk];
   };
 
   # Security

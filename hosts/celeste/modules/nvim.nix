@@ -1,8 +1,5 @@
-{ pkgs, ... }:
-
-with builtins;
-
-{
+{pkgs, ...}:
+with builtins; {
   programs.neovim.enable = true;
   programs.neovim.vimAlias = true;
 

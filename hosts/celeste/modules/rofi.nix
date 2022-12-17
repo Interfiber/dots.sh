@@ -1,8 +1,9 @@
-{ pkgs, lib, ... }:
-
-with builtins;
-
 {
+  pkgs,
+  lib,
+  ...
+}:
+with builtins; {
   programs.rofi = {
     enable = true;
     theme = ../configs/rofi/theme.rasi;

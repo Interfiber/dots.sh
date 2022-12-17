@@ -1,9 +1,5 @@
-{ pkgs, ... }:
-
-with builtins;
-
-{
-
+{pkgs, ...}:
+with builtins; {
   programs.starship = {
     enable = true;
     enableZshIntegration = true;
@@ -24,11 +20,11 @@ with builtins;
 
       export GDK_BACKEND=x11 # fix GTK themes, and some programs not running
       export GDK_SCALE=1 # fix steam floating awayyyyyyy
-      
+
       export EDITOR="nvim"
       export TERMINAL="kitty"
       export BROWSER="firefox"
-      
+
       export XDG_DATA_HOME="$HOME/.local/share"
       export XDG_CONFIG_HOME="$HOME/.config"
       export WINEPREFIX="$XDG_DATA_HOME/wine/prefixes/default"

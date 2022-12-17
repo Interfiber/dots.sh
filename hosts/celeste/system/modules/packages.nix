@@ -1,11 +1,8 @@
-{ pkgs, ... }:
-
-with builtins;
-
-{
+{pkgs, ...}:
+with builtins; {
   nix.package = pkgs.nixVersions.stable;
   nix.extraOptions = ''
-   experimental-features = nix-command flakes   
+    experimental-features = nix-command flakes
   '';
 
   nixpkgs.config.allowUnfree = true;
@@ -16,20 +13,19 @@ with builtins;
     auto-optimise-store = true;
   };
 
-
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-     curl
-     kitty
-     git
-     brave
-     polkit_gnome
+    curl
+    kitty
+    git
+    brave
+    polkit_gnome
   ];
 
   # Nerd Fonts
   fonts.fonts = with pkgs; [
-     (nerdfonts.override { fonts = [ "JetBrainsMono" "FantasqueSansMono" ]; })
-     termsyn
+    (nerdfonts.override {fonts = ["JetBrainsMono" "FantasqueSansMono"];})
+    termsyn
   ];
 }

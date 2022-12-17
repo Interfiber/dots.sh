@@ -1,6 +1,4 @@
-{ ... }:
-
-{
+{...}: {
   imports = [
     ./hypr.nix # Wayland compositor config
     ./kitty.nix # Terminal config
@@ -15,4 +13,3 @@
     ./waybar # Wayland bar
   ];
 }
-

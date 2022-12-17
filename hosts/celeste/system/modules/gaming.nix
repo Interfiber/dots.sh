@@ -1,7 +1,4 @@
-{ pkgs, ... }:
-
-with builtins;
-
-{
+{pkgs, ...}:
+with builtins; {
   programs.steam.enable = true;
 }

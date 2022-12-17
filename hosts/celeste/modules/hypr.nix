@@ -1,9 +1,5 @@
-{ pkgs, ... }:
-
-with builtins;
-
-{
-
+{pkgs, ...}:
+with builtins; {
   home.packages = with pkgs; [
     lxappearance
     hyprpaper

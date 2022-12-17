@@ -1,9 +1,5 @@
-{ pkgs, ... }:
-
-with builtins;
-
-{
-
+{pkgs, ...}:
+with builtins; {
   # Enable networking
   networking.hostName = "celeste";
   networking.networkmanager.enable = true;

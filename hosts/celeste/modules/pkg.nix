@@ -1,37 +1,32 @@
-{ pkgs, ... }:
-
-with builtins;
-
-{
-  nixpkgs.overlays =
-    let
-      discordOverlay = self: super: {
-        discord = super.discord.override { withOpenASAR = true; }; # Discord with openASR is faster
-      };
-    in
-    [ discordOverlay ];
+{pkgs, ...}:
+with builtins; {
+  nixpkgs.overlays = let
+    discordOverlay = self: super: {
+      discord = super.discord.override {withOpenASAR = true;}; # Discord with openASR is faster
+    };
+  in [discordOverlay];
 
   home.packages = with pkgs; [
-   # user interfaces
-   discord
-   pcmanfm
-   thunderbird
-   pavucontrol
-   pinentry-qt
-   signal-desktop
+    # user interfaces
+    discord
+    pcmanfm
+    thunderbird
+    pavucontrol
+    pinentry-qt
+    signal-desktop
 
-   # wayland
-   grim
+    # wayland
+    grim
 
-   # flex
-   pfetch
+    # flex
+    pfetch
 
-   # utils
-   fd
-   btop
-   psmisc
-   fzf
-   ripgrep
-   ffmpeg
+    # utils
+    fd
+    btop
+    psmisc
+    fzf
+    ripgrep
+    ffmpeg
   ];
 }

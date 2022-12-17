@@ -1,6 +1,4 @@
-{ ... }:
-
-{
+{...}: {
   imports = [
     ./boot.nix # Boot config/GRUB & Updated kernel
     ./services.nix # Services/programs I want
@@ -12,4 +10,3 @@
     ./fonts.nix # Fonts
   ];
 }
-

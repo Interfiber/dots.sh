@@ -1,8 +1,5 @@
-{ pkgs, ... }:
-
-with builtins;
-
-{
+{pkgs, ...}:
+with builtins; {
   # Bootloader config
   boot.loader.grub.enable = true;
   boot.loader.grub.efiSupport = true;
@@ -13,7 +10,7 @@ with builtins;
 
   # Kernel config
   boot.kernelPackages = pkgs.linuxPackages_latest;
-  boot.initrd.kernelModules = [ "amdgpu" ]; # Not required, nice to have though
+  boot.initrd.kernelModules = ["amdgpu"]; # Not required, nice to have though
 
   # etc
   boot.cleanTmpDir = true; # Dont keep crap laying around, saves disk space, and fixes problems with IPC sockets sometimes
