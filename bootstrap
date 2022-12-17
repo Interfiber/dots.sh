@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+
+# NixOS bootstrap script
+# Run this script on a clean install of NixOS to bootstrap it with my configs
+
+OFF='\033[0m'       # Text Reset
+RED='\033[0;31m'          # Red
+BLUE='\033[0;34m'         # Blue
+
+export AUTHPATH="$(which sudo)"
+
+if [[ -f "$(which doas)" ]]; then
+  export AUTHPATH="$(which doas)"
+fi
+
+function log(){
+  echo -e "$BLUE~>$OFF $1"
+}
+
+function homeManagerSetup(){
+	nix run '.#activate/celeste'
+}
+
+log "Bootstrap github: https://github.com/Interfiber/dotfiles"
+log "Bootstrap author: Interfiber<webmaster@interfiber.dev>"
+echo ""
+echo ""
+log "Updating Nix flake lock file..."
+nix flake update
+if [[ "$1" == "--only-home-manager" ]]; then 
+  log "Building home-manager config flake..."
+  homeManagerSetup
+  exit 0
+fi
+log "Applying system config..."
+command $AUTHPATH nixos-rebuild switch --flake .#
+log "Building home-manager config flake..."
+homeManagerSetup
