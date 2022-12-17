@@ -8,6 +8,7 @@
   pamixer = pkgs.pamixer + "/bin/pamixer";
 in {
   xdg.configFile."waybar/style.css".text = import ./style.nix;
+  xdg.configFile."waybar/launch.sh".text = "#!/usr/bin/env bash\nexport GDK_BACKEND=wayland\nwaybar";
 
   programs.waybar = {
     enable = true;

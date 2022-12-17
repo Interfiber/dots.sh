@@ -25,6 +25,8 @@ log "Bootstrap github: https://github.com/Interfiber/dotfiles"
 log "Bootstrap author: Interfiber<webmaster@interfiber.dev>"
 echo ""
 echo ""
+log "Formatting codebase..."
+nix run nixpkgs#alejandra -- .
 log "Updating Nix flake lock file..."
 nix flake update
 if [[ "$1" == "--only-home-manager" ]]; then 

@@ -50,6 +50,19 @@ with builtins; {
       # Selection highlight
       selection_foreground = "#a5b6cf";
       selection_background = "#1c1e27";
+
+      active_tab_foreground = "#cbced3";
+      active_tab_background = "#0d0f18";
+      inactive_tab_foreground = "#cbced3";
+      inactive_tab_background = "#151720";
+
+      tab_bar_min_tabs = 1;
+      tab_bar_edge = "bottom";
+      tab_bar_style = "powerline";
+      tab_powerline_style = "slanted";
+      tab_title_template = "{title}{' :{}:'.format(num_windows) if num_windows > 1 else ''}";
+      active_tab_font_style = "bold";
+      inactive_tab_font_style = "normal";
     };
   };
 }
