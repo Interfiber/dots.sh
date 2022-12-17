@@ -19,6 +19,9 @@ with builtins; {
     extraPortals = [pkgs.xdg-desktop-portal-gtk];
   };
 
+  # Fix GNOME programs
+  programs.dconf.enable = true;
+
   # Security
   security.doas.enable = true; # replacement for sudo
   security.polkit.enable = true;

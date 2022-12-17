@@ -11,7 +11,7 @@ stdenv.mkDerivation rec {
 
   src = fetchzip {
     url = "https://github.com/decaycs/decay-gtk/archive/refs/tags/v0.1.0.zip";
-    sha256 = "da41a8313be486c203a27e90439b67303d3588e7d8f2d60c92f8194af37d7141";
+    sha256 = "sha256-nmq7KQ/uyRU7hTE4l4qkYst/cB5LqtDOr4pEAwQyLFg=";
     stripRoot = false;
   };
 
@@ -22,6 +22,7 @@ stdenv.mkDerivation rec {
 
   installPhase = ''
     mkdir -p $out/share/themes/
+    cd decay-gtk-0.1.0
     cp -r Themes/Decayce $out/share/themes/
     cp -r Themes/Dark-decay $out/share/themes/
     cp -r Themes/Light-decay $out/share/themes/

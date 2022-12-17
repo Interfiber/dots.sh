@@ -43,9 +43,6 @@
         ./hosts/celeste/system/configuration.nix
       ];
     };
-    packages.${system} = {
-      decay-gtk = pkgs.callPackage ./pkgs/decay-gtk.nix {};
-    };
     apps.${system} = {
       "activate/${hostname}" = let
         drv = self.outputs.homeConfigurations.${hostname}.activationPackage;

@@ -97,6 +97,10 @@ end
 function setupColorScheme(config)
 	if config.type == "setupFunction" then
 		local colorscheme = m.requireLoad(config.name)
+
+		if colorscheme == -1 then
+			return
+		end
 	
 		if colorscheme.termGuiColors then
 			vim.opt.termguicolors = true
