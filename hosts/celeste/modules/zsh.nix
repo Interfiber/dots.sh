@@ -88,24 +88,85 @@ with builtins; {
 
     envExtra = ''
 
-      export GDK_BACKEND=x11 # fix GTK themes, and some programs not running
-      export GDK_SCALE=1 # fix steam floating awayyyyyyy
+            export GDK_BACKEND=x11 # fix GTK themes, and some programs not running
+            export GDK_SCALE=1 # fix steam floating awayyyyyyy
 
-      export EDITOR="nvim"
-      export TERMINAL="kitty"
-      export BROWSER="firefox"
+            export EDITOR="nvim"
+            export TERMINAL="kitty"
+            export BROWSER="firefox"
 
-      export XDG_DATA_HOME="$HOME/.local/share"
-      export XDG_CONFIG_HOME="$HOME/.config"
-      export WINEPREFIX="$XDG_DATA_HOME/wine/prefixes/default"
-      export LESSHISTFILE="-"
-      export WGETRC="$HOME/.config/wget/wgetrc"
-      export GNUPGHOME="$XDG_DATA_HOME/gnupg"
-      export PATH=$HOME/.local/share/bin:$PATH
+            export XDG_DATA_HOME="$HOME/.local/share"
+            export XDG_CONFIG_HOME="$HOME/.config"
+            export WINEPREFIX="$XDG_DATA_HOME/wine/prefixes/default"
+            export LESSHISTFILE="-"
+            export WGETRC="$HOME/.config/wget/wgetrc"
+            export GNUPGHOME="$XDG_DATA_HOME/gnupg"
+            export PATH=$HOME/.local/share/bin:$PATH
 
-      alias sudo="doas"
+            alias sudo="doas"
 
-      pfetch
+      # syntax config
+      ZSH_HIGHLIGHT_HIGHLIGHTERS=(main cursor)
+      typeset -gA ZSH_HIGHLIGHT_STYLES
+      ZSH_HIGHLIGHT_STYLES[comment]='fg=#990000'
+      ZSH_HIGHLIGHT_STYLES[alias]='fg=#005FD7'
+      ZSH_HIGHLIGHT_STYLES[suffix-alias]='fg=#005FD7'
+      ZSH_HIGHLIGHT_STYLES[global-alias]='fg=#005FD7'
+      ZSH_HIGHLIGHT_STYLES[function]='fg=#005FD7'
+      ZSH_HIGHLIGHT_STYLES[command]='fg=#005FD7'
+      ZSH_HIGHLIGHT_STYLES[precommand]='fg=#005FD7,italic'
+      ZSH_HIGHLIGHT_STYLES[autodirectory]='fg=#005FD7,italic'
+      ZSH_HIGHLIGHT_STYLES[single-hyphen-option]='fg=#00AFFF'
+      ZSH_HIGHLIGHT_STYLES[double-hyphen-option]='fg=#00AFFF'
+      ZSH_HIGHLIGHT_STYLES[back-quoted-argument]='fg=#00AFFF'
+      ## Keywords
+      ## Built ins
+      ZSH_HIGHLIGHT_STYLES[builtin]='fg=#005FD7'
+      ## Punctuation
+      ZSH_HIGHLIGHT_STYLES[commandseparator]='fg=#FF79C6'
+      ZSH_HIGHLIGHT_STYLES[command-substitution-delimiter]='fg=#F8F8F2'
+      ZSH_HIGHLIGHT_STYLES[command-substitution-delimiter-unquoted]='fg=#F8F8F2'
+      ZSH_HIGHLIGHT_STYLES[process-substitution-delimiter]='fg=#F8F8F2'
+      ZSH_HIGHLIGHT_STYLES[back-quoted-argument-delimiter]='fg=#FF79C6'
+      ZSH_HIGHLIGHT_STYLES[back-double-quoted-argument]='fg=#FF79C6'
+      ZSH_HIGHLIGHT_STYLES[back-dollar-quoted-argument]='fg=#FF79C6'
+      ## Serializable / Configuration Languages
+      ## Storage
+      ## Strings
+      ZSH_HIGHLIGHT_STYLES[command-substitution-quoted]='fg=#F1FA8C'
+      ZSH_HIGHLIGHT_STYLES[command-substitution-delimiter-quoted]='fg=#F1FA8C'
+      ZSH_HIGHLIGHT_STYLES[single-quoted-argument]='fg=#F1FA8C'
+      ZSH_HIGHLIGHT_STYLES[single-quoted-argument-unclosed]='fg=#FF5555'
+      ZSH_HIGHLIGHT_STYLES[double-quoted-argument]='fg=#F1FA8C'
+      ZSH_HIGHLIGHT_STYLES[double-quoted-argument-unclosed]='fg=#FF5555'
+      ZSH_HIGHLIGHT_STYLES[rc-quote]='fg=#F1FA8C'
+      ## Variables
+      ZSH_HIGHLIGHT_STYLES[dollar-quoted-argument]='fg=#F8F8F2'
+      ZSH_HIGHLIGHT_STYLES[dollar-quoted-argument-unclosed]='fg=#FF5555'
+      ZSH_HIGHLIGHT_STYLES[dollar-double-quoted-argument]='fg=#F8F8F2'
+      ZSH_HIGHLIGHT_STYLES[assign]='fg=#F8F8F2'
+      ZSH_HIGHLIGHT_STYLES[named-fd]='fg=#F8F8F2'
+      ZSH_HIGHLIGHT_STYLES[numeric-fd]='fg=#F8F8F2'
+      ## No category relevant in spec
+      ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=#FF5555'
+      ZSH_HIGHLIGHT_STYLES[path]='fg=#F8F8F2'
+      ZSH_HIGHLIGHT_STYLES[path_pathseparator]='fg=#FF79C6'
+      ZSH_HIGHLIGHT_STYLES[path_prefix]='fg=#F8F8F2'
+      ZSH_HIGHLIGHT_STYLES[path_prefix_pathseparator]='fg=#FF79C6'
+      ZSH_HIGHLIGHT_STYLES[globbing]='fg=#F8F8F2'
+      ZSH_HIGHLIGHT_STYLES[history-expansion]='fg=#BD93F9'
+      #ZSH_HIGHLIGHT_STYLES[command-substitution]='fg=?'
+      #ZSH_HIGHLIGHT_STYLES[command-substitution-unquoted]='fg=?'
+      #ZSH_HIGHLIGHT_STYLES[process-substitution]='fg=?'
+      #ZSH_HIGHLIGHT_STYLES[arithmetic-expansion]='fg=?'
+      ZSH_HIGHLIGHT_STYLES[back-quoted-argument-unclosed]='fg=#FF5555'
+      ZSH_HIGHLIGHT_STYLES[redirection]='fg=#F8F8F2'
+      ZSH_HIGHLIGHT_STYLES[arg0]='fg=#F8F8F2'
+      ZSH_HIGHLIGHT_STYLES[default]='fg=#F8F8F2'
+      ZSH_HIGHLIGHT_STYLES[cursor]='standout'
+
+
+            pfetch
     '';
   };
 }

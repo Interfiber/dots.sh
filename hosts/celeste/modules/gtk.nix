@@ -1,9 +1,10 @@
 {pkgs, ...}:
 with builtins; {
-  home.packages = with pkgs; [
-    catppuccin-gtk
-    catppuccin-cursors
-    breeze-icons
-    breeze-gtk
-  ];
+  gtk = {
+    enable = true;
+    theme = {
+      name = "Decayce";
+      package = pkgs.callPackage ../../../pkg/decay-gtk.nix {};
+    };
+  };
 }
