@@ -28,5 +28,6 @@ with builtins; {
     fzf
     ripgrep
     ffmpeg
+    gcc # Always have a C compiler
   ];
 }

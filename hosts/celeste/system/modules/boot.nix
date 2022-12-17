@@ -17,7 +17,6 @@ with builtins; {
   boot.loader.efi.canTouchEfiVariables = true; # Allow the bootloader to touch efi vars
   boot.loader.efi.efiSysMountPoint = "/boot/efi"; # EFI system mount point is /boot/efi
 
-
   # Kernel config
   boot.kernelPackages = pkgs.linuxPackages_latest; # Use latest kernel version, not the old NixOS one
   boot.initrd.kernelModules = ["amdgpu"]; # Not required, nice to have though, starts GPU drivers before systemd starts
