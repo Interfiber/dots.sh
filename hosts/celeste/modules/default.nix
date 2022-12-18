@@ -11,5 +11,6 @@
     ./exa.nix # Better ls
     ./git.nix # Git version control config
     ./waybar # Wayland bar
+    ./swaylock.nix # Wayland lockscreen
   ];
 }
