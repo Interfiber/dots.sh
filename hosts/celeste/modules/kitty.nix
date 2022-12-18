@@ -8,6 +8,7 @@ with builtins; {
       cursor_shape = "Beam";
       background = "#0d0f18";
       foreground = "#a5b6cf";
+      window_padding_width = 5;
 
       # The 16 terminal colors
 
