@@ -124,6 +124,7 @@ m.config = {
 				requires = { lib.makePackage("MunifTanjim/nui.nvim", {}), lib.makePackage("rcarriga/nvim-notify", {}) }
 			}),
       lib.makePackage("folke/todo-comments.nvim", {}),
+      lib.makePackage("lukas-reineke/lsp-format.nvim", {}),
 
 			lib.makePackerPackage()
 		}

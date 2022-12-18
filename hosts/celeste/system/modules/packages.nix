@@ -23,6 +23,8 @@ with builtins; {
     polkit_gnome
   ];
 
+  programs.sway.enable = true;
+
   # Nerd Fonts
   fonts.fonts = with pkgs; [
     (nerdfonts.override {fonts = ["JetBrainsMono" "FantasqueSansMono"];})

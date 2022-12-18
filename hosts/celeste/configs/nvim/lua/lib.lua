@@ -87,7 +87,10 @@ m.makeLspServer = function (serverName, config)
 				capabilities = capabilities,
 				on_attach = function(client, bufnr)
 					local navic = require("nvim-navic")
-				    navic.attach(client, bufnr)
+          local format = require("lsp-format")
+
+				  navic.attach(client, bufnr)
+          format.on_attach(client)
 				end
 			}
 		end
