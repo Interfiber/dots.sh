@@ -19,7 +19,6 @@ with builtins; {
     curl
     kitty
     git
-    brave
     polkit_gnome
   ];
 

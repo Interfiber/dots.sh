@@ -175,7 +175,7 @@ m.makeEditorOptions = function (config)
 			vim.opt.hlsearch = config.hlSearch
 			vim.opt.incsearch = config.incSearch
 
-			vim.opt.wrap = not config.enableLineWrap
+			vim.opt.wrap = config.enableLineWrap
 
 			vim.opt.smartindent = config.enableSmartIndent
 			vim.opt.nu = config.enableLineNumbers

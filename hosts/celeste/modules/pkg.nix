@@ -10,11 +10,13 @@ with builtins; {
     # user interfaces
     discord
     pcmanfm
-    thunderbird
+    librewolf
     pavucontrol
     pinentry-qt
     signal-desktop
     prismlauncher
+    vscodium
+    mpv
 
     # wayland
     grim

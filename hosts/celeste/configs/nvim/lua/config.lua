@@ -78,15 +78,16 @@ m.config = {
 	keyboard = {
 		leader = lib.makeLeader(" "),
 		bindings = {
-			lib.makeBinding("<Leader>q", ":q"),
-			lib.makeBinding("<Leader>f", ":Telescope find_files"),
-			lib.makeBinding("<Leader>w", ":bd"),
-			lib.makeBinding("<Leader>t", ":NvimTreeToggle"),
-			lib.makeBinding("<Leader>h", ":bprev"),
-			lib.makeBinding("<Leader>l", ":bnext"),
-			lib.makeBinding("<Leader>p", ":Trouble"),
+			lib.makeBinding("<Leader>q",  ":q"),
+			lib.makeBinding("<Leader>f",  ":Telescope find_files"),
+			lib.makeBinding("<Leader>w",  ":bd"),
+			lib.makeBinding("<Leader>t",  ":NvimTreeToggle"),
+			lib.makeBinding("<Leader>h",  ":bprev"),
+			lib.makeBinding("<Leader>l",  ":bnext"),
+			lib.makeBinding("<Leader>p",  ":Trouble"),
       lib.makeBinding("<Leader>to", ":TodoTelescope"),
-      lib.makeBinding("<Leader>tr", ":TodoTrouble")
+      lib.makeBinding("<Leader>tr", ":TodoTrouble"),
+      lib.makeBinding("<Leader>g",  ":Telescope grep_string")
 		}
 	},
 	packer = {
