@@ -20,4 +20,4 @@
 
 ## More screenshots
 
-![](./assets/grub.png)
+![](./assets/grub.jpg)
