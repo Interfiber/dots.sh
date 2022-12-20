@@ -54,17 +54,12 @@ with builtins; {
 
     timeouts = [
       {
-        timeout = 60;
+        timeout = 80;
         command = "${pkgs.libnotify}/bin/notify-send \"Locking screen in 20 seconds!\"";
       }
       {
-        timeout = 80;
-        command = "${pkgs.swaylock-effects}/bin/swaylock -f";
-      }
-      {
         timeout = 100;
-        command = "${config.wayland.windowManager.hyprland.package}/bin/hyprctl dispatch dpms off";
-        resumeCommand = "${config.wayland.windowManager.hyprland.package}/bin/hyprctl dispatch dpms on";
+        command = "${pkgs.swaylock-effects}/bin/swaylock -f";
       }
     ];
   };

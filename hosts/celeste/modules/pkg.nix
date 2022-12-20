@@ -20,6 +20,7 @@ with builtins; {
 
     # wayland
     grim
+    feh
 
     # flex
     pfetch

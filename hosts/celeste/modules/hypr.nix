@@ -7,7 +7,6 @@ with lib; let
   swwwPkg = pkgs.callPackage ../../../pkgs/swww.nix {};
 in {
   home.packages = [
-    pkgs.lxappearance
     swwwPkg
   ];
 
