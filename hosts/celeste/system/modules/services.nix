@@ -25,4 +25,20 @@ with builtins; {
   # Security
   security.doas.enable = true; # replacement for sudo
   security.polkit.enable = true;
+  services.gnome.gnome-keyring.enable = true;
+
+  # Yubi key
+  services.pcscd.enable = true;
+  services.udev.packages = [pkgs.yubikey-personalization];
+  programs.gnupg.agent = {
+    enable = true;
+    enableSSHSupport = true;
+  };
+  environment.systemPackages = with pkgs; [gnupg pinentry-curses pinentry-qt paperkey wget];
+
+  security.pam.yubico = {
+    enable = true;
+    debug = true;
+    mode = "challenge-response";
+  };
 }

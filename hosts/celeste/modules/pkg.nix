@@ -27,6 +27,7 @@ with builtins; {
 
     # utils
     fd
+    jq # yay json parsing
     btop
     psmisc
     fzf
