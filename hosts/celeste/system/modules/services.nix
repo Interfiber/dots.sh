@@ -38,7 +38,7 @@ with builtins; {
 
   security.pam.yubico = {
     enable = true;
-    debug = true;
+    debug = false;
     mode = "challenge-response";
   };
 }
