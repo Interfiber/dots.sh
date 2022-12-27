@@ -12,6 +12,5 @@
     ./git.nix # Git version control config
     ./waybar # Wayland bar
     ./swaylock.nix # Wayland lock screen
-    ./hardware.nix # Hardware configs(bluetooth, controllers)
   ];
 }

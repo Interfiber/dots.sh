@@ -8,5 +8,6 @@
     ./packages.nix # System-level packages
     ./gaming.nix # Steam, and other game-related things
     ./fonts.nix # Fonts
+    ./hardware.nix # Hardware config
   ];
 }
