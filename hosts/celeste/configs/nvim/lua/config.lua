@@ -124,8 +124,8 @@ m.config = {
 			lib.makePackage("folke/noice.nvim", {
 				requires = { lib.makePackage("MunifTanjim/nui.nvim", {}), lib.makePackage("rcarriga/nvim-notify", {}) }
 			}),
-      		lib.makePackage("folke/todo-comments.nvim", {}),
-      		lib.makePackage("lukas-reineke/lsp-format.nvim", {}),
+      lib.makePackage("folke/todo-comments.nvim", {}),
+      lib.makePackage("lukas-reineke/lsp-format.nvim", {}),
 			lib.makePackage("RRethy/nvim-base16", {}),
 
 			lib.makePackerPackage()

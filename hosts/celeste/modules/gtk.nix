@@ -3,8 +3,8 @@ with builtins; {
   gtk = {
     enable = true;
     theme = {
-      name = "Decayce";
-      package = pkgs.callPackage ../../../pkgs/decay-gtk.nix {};
+      name = "Paradise";
+      package = pkgs.callPackage ../../../pkgs/paradise-gtk.nix {};
     };
 
     iconTheme = {
