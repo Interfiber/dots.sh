@@ -35,19 +35,18 @@ with builtins; {
       };
 
       "urgency_low" = {
-        background = "#0d0f18";
-        foreground = "#a5b6cf";
+        background = "#151515";
+        foreground = "#8C977D";
       };
 
       "urgency_normal" = {
-        background = "#0d0f18";
-        foreground = "#a5b6cf";
+        background = "#151515";
+        foreground = "#E8E3E3";
       };
 
       "urgency_critical" = {
-        background = "#0d0f18";
-        foreground = "#a5b6cf";
-        frame_color = "#e26c7c";
+        background = "#151515";
+        foreground = "#B66467";
       };
     };
   };

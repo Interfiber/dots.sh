@@ -114,6 +114,19 @@ function setupColorScheme(config)
 		else
 			print("Colorscheme not found!")
 		end
+	elseif config.type == "base16" then
+		local colorscheme = m.requireLoad("colors." .. config.name)
+
+		if colorscheme == -1 then
+			print("Base16 colorscheme failed to load")
+			return
+		end
+
+		local base16 = m.requireLoad("base16-colorscheme")
+
+		if base16 ~= -1 then
+			require('base16-colorscheme').setup(colorscheme)
+		end
 	end
 end
 

@@ -5,14 +5,14 @@ m.config = {
 	appearance = {
 		colorscheme = lib.makeColorscheme({
 			termGuiColors = true,
-			type = "setupFunction",
+			type = "base16",
 			setupConfig = {
 				style = "decayce",
 				nvim_tree = {
 					contrast = true
 				}
 			},
-			name = "decay"
+			name = "paradise"
 		}),
 	},
 	editor = {
@@ -85,9 +85,9 @@ m.config = {
 			lib.makeBinding("<Leader>h",  ":bprev"),
 			lib.makeBinding("<Leader>l",  ":bnext"),
 			lib.makeBinding("<Leader>p",  ":Trouble"),
-      lib.makeBinding("<Leader>to", ":TodoTelescope"),
-      lib.makeBinding("<Leader>tr", ":TodoTrouble"),
-      lib.makeBinding("<Leader>g",  ":Telescope grep_string")
+      		lib.makeBinding("<Leader>to", ":TodoTelescope"),
+      		lib.makeBinding("<Leader>tr", ":TodoTrouble"),
+      		lib.makeBinding("<Leader>g",  ":Telescope grep_string")
 		}
 	},
 	packer = {
@@ -124,8 +124,9 @@ m.config = {
 			lib.makePackage("folke/noice.nvim", {
 				requires = { lib.makePackage("MunifTanjim/nui.nvim", {}), lib.makePackage("rcarriga/nvim-notify", {}) }
 			}),
-      lib.makePackage("folke/todo-comments.nvim", {}),
-      lib.makePackage("lukas-reineke/lsp-format.nvim", {}),
+      		lib.makePackage("folke/todo-comments.nvim", {}),
+      		lib.makePackage("lukas-reineke/lsp-format.nvim", {}),
+			lib.makePackage("RRethy/nvim-base16", {}),
 
 			lib.makePackerPackage()
 		}

@@ -13,7 +13,7 @@ in ''
     font-size: 13px;
   }
   window#waybar {
-    background-color: #0d0f18;
+    background-color: #151515;
     transition-property: background-color;
     transition-duration: 0.5s;
   }
@@ -29,13 +29,12 @@ in ''
     box-shadow: inset 0 -3px transparent; /* Use box-shadow instead of border so the text isn't offset */
     padding: 6px 9px;
     margin: 6px 3px;
-    border-radius: 4px;
-    background-color: #1e1e2e;
+    background-color: #424242;
     color: #cdd6f4;
   }
   #workspaces button.active {
     color: #1e1e2e;
-    background-color: #93cee9;
+    background-color: #8DA3B9;
   }
   #workspaces button:hover {
    box-shadow: inherit;
@@ -57,7 +56,6 @@ in ''
   #network,
   #clock,
   #tray {
-    border-radius: 4px;
     margin: 6px 3px;
     padding: 6px 12px;
     background-color: #151720;
@@ -82,19 +80,19 @@ in ''
     animation-direction: alternate;
   }
   #pulseaudio.microphone {
-    background-color: #dd6777;
+    background-color: #B66467;
   }
   #pulseaudio {
-    background-color: #93cee9;
+    background-color: #8AA6A2;
   }
   #network {
-    background-color: #90ceaa;
+    background-color: #8C977D;
   }
   #clock.date {
-    background-color: #86aaec;
+    background-color: #8DA3B9;
   }
   #clock {
-    background-color: #86aaec;
+    background-color: #8DA3B9;
   }
   tooltip {
     font-family: "Inter", sans-serif;
