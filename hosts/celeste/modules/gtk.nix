@@ -3,8 +3,8 @@ with builtins; {
   gtk = {
     enable = true;
     theme = {
-      name = "Paradise";
-      package = pkgs.callPackage ../../../pkgs/paradise-gtk.nix {};
+      name = "Adwaita-dark";
+      package = pkgs.gnome.gnome-themes-extra;
     };
 
     iconTheme = {
