@@ -1,0 +1,66 @@
+shopt -s nullglob globstar
+
+
+
+randpw(){ < /dev/urandom tr -dc _A-Z-a-z-0-9 | head -c${1:-64};echo;}
+
+
+
+# get all the saved password files
+export PASSWORD_STORE_DIR=$HOME/external/pass
+prefix=${PASSWORD_STORE_DIR-~/.password-store}
+password_files=( "$prefix"/**/*.gpg )
+password_files=( "${password_files[@]#"$prefix"/}" )
+password_files=( "${password_files[@]%.gpg}" )
+
+# shows a list of all password files and saved the selected one in a variable
+
+mode=$(echo -e "Copy password\nAdd password\nAdd OTP" | rofi -dmenu)
+
+if [[ "$mode" == "Copy password" ]]; then
+  password=$(printf '%s\n' "${password_files[@]}" | rofi -dmenu "$@")
+  [[ -n $password ]] || exit
+
+
+
+  if [[ $(pass show "$password") == *"otpauth://totp"* ]]; then
+    result=$(pass otp show -c "$password" | head -n1)
+    notify-send "Pass - (OTP) Password manager" "$result"
+    exit 0
+  fi
+
+  result=$(pass show -c "$password" | head -n1)
+  notify-send "Pass - Password manager" "$result"
+fi
+
+if [[ "$mode" == "Add password" ]]; then
+  passwd_name=$(yad --entry --entry-label="Enter password name: ")
+  echo "Using name: $passwd_name"
+
+  passwd_mode=$(echo -e "Generate password\nInput password" | rofi -dmenu)
+  echo "Using mode: $passwd_mode"
+
+  passwd=""
+
+  if [[ "$passwd_mode" == "Generate password" ]]; then
+    echo "Generating password, example output: $(randpw)"
+    passwd=$(randpw)
+  fi
+
+  if [[ "$passwd_mode" == "Input password" ]]; then
+    passwd=$(yad --entry --entry-label="Enter password: ")
+  fi
+
+  echo -e $passwd | pass insert --multiline --force "$passwd_name"
+
+  notify-send "Pass - Password manager" "Inserted $passwd_name into the password store"
+fi
+
+if [[ "$mode" == "Add OTP" ]]; then
+  otp_img=$(yad --file)
+  echo "Using image: $otp_img"
+  otp_name=$(yad --entry --entry-label="Enter OTP Name: ")
+  echo "Using name: $otp_name"
+  zbarimg -q --raw "$otp_img" | pass otp insert "$otp_name"
+  notify-send "Pass - (OTP) Password manager" "Inserted $otp_name into password store"
+fi

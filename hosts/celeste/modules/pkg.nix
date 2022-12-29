@@ -11,6 +11,7 @@ with builtins; {
     discord
     pcmanfm
     librewolf
+    firefox-devedition-bin
     pavucontrol
     pinentry-qt
     signal-desktop

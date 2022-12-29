@@ -89,8 +89,7 @@ with builtins; {
     envExtra = ''
 
             export GDK_SCALE=1 # fix steam floating awayyyyyyy
-            export MOZ_ENABLE_WAYLAND=1 # Firefox under wayland
-            export GDK_BACKEND=wayland
+            export PASSWORD_STORE_DIR=$HOME/external/pass
 
             export EDITOR="nvim"
             export TERMINAL="kitty"

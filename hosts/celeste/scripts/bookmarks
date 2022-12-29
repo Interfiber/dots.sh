@@ -1,1 +1,7 @@
 #!/usr/bin/env bash
+
+BOOKMARKS_FILE="$HOME/.df/hosts/celeste/bookmarks"
+
+BOOKMARK=$(cat $BOOKMARKS_FILE | rofi -dmenu)
+
+ydotool type "$BOOKMARK"
