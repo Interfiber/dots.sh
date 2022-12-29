@@ -17,7 +17,7 @@ with builtins; {
         frame_width = 2;
 
         show_indicators = "no";
-        corner_radius = 5;
+        corner_radius = 0;
         max_icon_size = 140;
         width = 600;
         origin = "top-right";

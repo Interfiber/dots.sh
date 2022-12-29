@@ -17,28 +17,29 @@ with builtins; {
       indicator = true;
       indicator-radius = 200;
       indicator-thickness = 20;
-      line-color = "#181825";
-      ring-color = "#151720";
-      inside-color = "#0d0f18";
-      key-hl-color = "#cba6f7";
+      line-color = "#151515"; # Color for line
+      ring-color = "#151515"; # Background color
+      inside-color = "#151515"; # Background color for internal ring
+      key-hl-color = "#8DA3B9";
       separator-color = "00000000";
       text-color = "#cdd6f4";
       text-caps-lock-color = "";
-      line-ver-color = "#cba6f7";
-      ring-ver-color = "#c296eb";
-      inside-ver-color = "#181825";
-      text-ver-color = "#cdd6f4";
-      ring-wrong-color = "#dd6777";
-      text-wrong-color = "#f38ba8";
-      inside-wrong-color = "#181825";
-      inside-clear-color = "#181825";
-      text-clear-color = "#c296eb";
-      ring-clear-color = "#cba6f7";
-      line-clear-color = "#181825";
-      line-wrong-color = "#181825";
+      line-ver-color = "#151515";
+      ring-ver-color = "#151515";
+      inside-ver-color = "#151515";
+      text-ver-color = "#E8E3E3";
+      ring-wrong-color = "#151515";
+      text-wrong-color = "#E8E3E3";
+      inside-wrong-color = "#151515";
+      inside-clear-color = "#151515";
+      text-clear-color = "#E8E3E3";
+      ring-clear-color = "#151515";
+      line-clear-color = "#151515";
+      line-wrong-color = "#151515";
       bs-hl-color = "#f38ba8";
       line-uses-ring = false;
       datestr = "%d.%m";
+      effect-blur = "5x5";
       ignore-empty-password = true;
     };
   };
@@ -54,11 +55,11 @@ with builtins; {
 
     timeouts = [
       {
-        timeout = 80;
+        timeout = 100;
         command = "${pkgs.libnotify}/bin/notify-send \"Locking screen in 20 seconds!\"";
       }
       {
-        timeout = 100;
+        timeout = 120;
         command = "${pkgs.swaylock-effects}/bin/swaylock -f";
       }
     ];
