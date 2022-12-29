@@ -88,8 +88,9 @@ with builtins; {
 
     envExtra = ''
 
-            export GDK_BACKEND=x11 # fix GTK themes, and some programs not running
             export GDK_SCALE=1 # fix steam floating awayyyyyyy
+            export MOZ_ENABLE_WAYLAND=1 # Firefox under wayland
+            export GDK_BACKEND=wayland
 
             export EDITOR="nvim"
             export TERMINAL="kitty"

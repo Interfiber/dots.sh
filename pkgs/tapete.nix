@@ -11,16 +11,16 @@
 }:
 rustPlatform.buildRustPackage rec {
   pname = "tapete";
-  version = "0.1.0";
+  version = "0.0.1";
 
   src = fetchFromGitHub {
     owner = "Interfiber";
     repo = "tapete";
-    #    rev = "v${version}";
-    #    hash = "sha256-9qTKaLfVeZD8tli7gqGa6gr1a2ptQRj4sf1XSPORo1s=";
+    rev = "v${version}";
+    hash = "sha256-yqIRThvUx7tNgdvrj7cWriycp/Xl28UdjEqypZGhtOQ=";
   };
 
-  cargoSha256 = "sha256-OWe+r8Vh09yfMFBjVH66i+J6RtHo1nDva0m1dJPZ4rE=";
+  cargoSha256 = "sha256-lOJGR86zymG4ePzjqvbhafzswz4Sq//OlJ/vy26406Q=";
 
   strictDeps = true;
   depsBuildBuild = [pkg-config];

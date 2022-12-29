@@ -12,5 +12,6 @@
     ./git.nix # Git version control config
     ./waybar # Wayland bar
     ./swaylock.nix # Wayland lock screen
+    ./pass.nix # Password manager
   ];
 }

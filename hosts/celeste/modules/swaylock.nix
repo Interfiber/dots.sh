@@ -9,7 +9,7 @@ with builtins; {
 
   programs.swaylock = {
     settings = {
-      image = "/home/interfiber/.df/hosts/celeste/modules/swaylock_image.png";
+      image = "/home/interfiber/.df/wallpapers/wallpaper_minecraft_mangrove_swamp_3840x2160.png";
       clock = true;
       color = "00000000";
       font = "JetBrainsMono Nerd Font Mono";

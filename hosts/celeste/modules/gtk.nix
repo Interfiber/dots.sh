@@ -27,9 +27,5 @@ with builtins; {
     size = 16;
   };
 
-  home.packages = with pkgs; [
-    lxappearance
-  ];
-
   home.pointerCursor.gtk.enable = true;
 }
