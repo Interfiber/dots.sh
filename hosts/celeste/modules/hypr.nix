@@ -4,7 +4,7 @@
   ...
 }:
 with lib; let
-  swwwPkg = pkgs.callPackage ../../../pkgs/tapete.nix {};
+  swwwPkg = pkgs.callPackage ../../../pkgs/swww.nix {};
 in {
   home.packages = [
     swwwPkg

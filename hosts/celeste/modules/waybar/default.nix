@@ -48,10 +48,6 @@ in {
           active-only = false;
         };
 
-        "custom/rapd" = {
-          # needs jq
-        };
-
         tray = {
           spacing = 10;
         };

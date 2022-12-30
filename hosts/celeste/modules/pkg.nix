@@ -10,7 +10,6 @@ with builtins; {
     # user interfaces
     discord
     pcmanfm
-    librewolf
     firefox-devedition-bin
     pavucontrol
     pinentry-qt
