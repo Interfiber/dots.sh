@@ -12,7 +12,6 @@ with builtins; {
     pcmanfm
     firefox-devedition-bin
     pavucontrol
-    pinentry-qt
     signal-desktop
     prismlauncher
     vscodium

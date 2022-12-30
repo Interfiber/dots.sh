@@ -4,7 +4,7 @@ with builtins; {
     neomutt
   ];
 
-  home.configFile.mutt = {
+  xdg.configFile.mutt = {
     source = ../configs/mutt;
     recursive = true;
   };

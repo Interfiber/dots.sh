@@ -30,11 +30,13 @@ with builtins; {
   # Yubi key
   services.pcscd.enable = true;
   services.udev.packages = [pkgs.yubikey-personalization];
+
+  environment.systemPackages = with pkgs; [gnupg pinentry-gtk2];
+
   programs.gnupg.agent = {
     enable = true;
-    enableSSHSupport = true;
+    pinentryFlavor = "gtk2";
   };
-  environment.systemPackages = with pkgs; [gnupg pinentry-curses pinentry-qt paperkey wget];
 
   security.pam.yubico = {
     enable = true;

@@ -93,7 +93,7 @@ with builtins; {
 
             export EDITOR="nvim"
             export TERMINAL="kitty"
-            export BROWSER="firefox"
+            export BROWSER="firefox-devedition"
 
             export XDG_DATA_HOME="$HOME/.local/share"
             export XDG_CONFIG_HOME="$HOME/.config"
