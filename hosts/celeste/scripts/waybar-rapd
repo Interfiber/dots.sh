@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+while :
+do
+  METADATA=$(rapc player metadata | jq -r .message)
+  ALBUM=$(echo $METADATA | jq -r .album)
+  ALBUM_ART=$(echo $METADATA | jq -r .album_art)
+  ARTIST=$(echo $METADATA | jq -r .artist)
+  TITLE=$(echo $METADATA | jq -r .title)
+
+  printf '{"text": "%s - %s"}\n' "$TITLE" "$ARTIST"
+  sleep 1
+done
+

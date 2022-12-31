@@ -9,5 +9,6 @@
     ./gaming.nix # Steam, and other game-related things
     ./fonts.nix # Fonts
     ./hardware.nix # Hardware config
+    ./virt.nix # Virt-manager & QEMU
   ];
 }

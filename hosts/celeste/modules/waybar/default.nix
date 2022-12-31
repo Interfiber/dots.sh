@@ -29,7 +29,7 @@ in {
           "wlr/workspaces"
         ];
 
-        modules-center = [];
+        modules-center = ["custom/rapd"];
 
         modules-right = [
           "pulseaudio#microphone"
@@ -39,6 +39,11 @@ in {
           "clock"
           "tray"
         ];
+
+        "custom/rapd" = {
+          exec = "/home/interfiber/.df/hosts/celeste/scripts/waybar-rapd";
+          return-type = "json";
+        };
 
         "wlr/workspaces" = {
           on-click = "activate";

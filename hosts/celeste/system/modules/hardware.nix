@@ -5,5 +5,12 @@ with builtins; {
 
   # Bluetooth
   hardware.bluetooth.enable = true;
+  hardware.bluetooth.settings = {
+    General = {
+      ControllerMode = "dual";
+      JustWorksRepairing = "confirm";
+    };
+  };
+
   services.blueman.enable = true;
 }
