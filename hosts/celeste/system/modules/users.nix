@@ -3,7 +3,7 @@ with builtins; {
   users.users.interfiber = {
     isNormalUser = true;
     description = "Persephone";
-    extraGroups = ["networkmanager" "wheel" "libvirtd"];
+    extraGroups = ["networkmanager" "wheel" "vboxusers"];
     shell = pkgs.zsh;
   };
 }

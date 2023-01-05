@@ -127,6 +127,7 @@ m.config = {
       lib.makePackage("folke/todo-comments.nvim", {}),
       lib.makePackage("lukas-reineke/lsp-format.nvim", {}),
 			lib.makePackage("RRethy/nvim-base16", {}),
+      lib.makePackage("andweeb/prensence.nvim", {}),
 
 			lib.makePackerPackage()
 		}
