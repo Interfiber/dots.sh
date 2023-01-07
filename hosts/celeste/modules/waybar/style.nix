@@ -32,6 +32,7 @@ in ''
     margin: 6px 3px;
     background-color: #424242;
     color: #cdd6f4;
+    border-radius: 5px;
   }
   #workspaces button.active {
     color: #1e1e2e;
@@ -61,6 +62,7 @@ in ''
     padding: 6px 12px;
     background-color: #151720;
     color: #181825;
+    border-radius: 5px;
   }
   @keyframes blink {
     to {

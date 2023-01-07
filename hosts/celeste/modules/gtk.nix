@@ -3,7 +3,7 @@ with builtins; {
   gtk = {
     enable = true;
     theme = {
-      name = "Adwaita-dark";
+      name = "Kanagawa-B";
       package = pkgs.callPackage ../../../pkgs/kanagawa-gtk.nix {};
     };
 

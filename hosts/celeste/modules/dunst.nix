@@ -19,7 +19,7 @@ in
           frame_width = 2;
 
           show_indicators = "no";
-          corner_radius = 0;
+          corner_radius = 5;
           max_icon_size = 140;
           width = 600;
           origin = "top-right";

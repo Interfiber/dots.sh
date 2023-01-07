@@ -11,7 +11,7 @@ stdenv.mkDerivation rec {
 
   src = fetchzip {
     url = "https://github.com/Fausto-Korpsvart/Kanagawa-GKT-Theme/archive/refs/heads/main.zip";
-    sha256 = "sha256-nmq7KQ/uyRU7hTE4l4qkYst/cB5LqtDOr4pEAwQyLFg=";
+    sha256 = "sha256-0eIZv14E49/hd8OGBfvQnT3VVIhui8zfaWJOYdY/grE=";
     stripRoot = false;
   };
 
