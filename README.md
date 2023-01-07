@@ -3,7 +3,7 @@
   <br>
   Interfiber's Dotfiles
   <br>
-  <img src="https://img.shields.io/badge/NixOS-unstable-informational.svg?style=flat&logo=nixos" href="https://github.com/nixos/nixpkgs">
+  <img src="https://builtwithnix.org/badge.svg"></img>
 </h1>
 
 ![](./assets/preview.png)
