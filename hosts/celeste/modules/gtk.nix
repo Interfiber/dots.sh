@@ -4,7 +4,7 @@ with builtins; {
     enable = true;
     theme = {
       name = "Adwaita-dark";
-      package = pkgs.gnome.gnome-themes-extra;
+      package = pkgs.callPackage ../../../pkgs/kanagawa-gtk.nix {};
     };
 
     iconTheme = {
