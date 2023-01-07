@@ -1,7 +1,9 @@
 {pkgs, ...}:
 with builtins; {
-  # Enable wayland support for electron
-  home.sessionVariables.NIXOS_OZONE_WL = "1";
+  programs.zoxide = {
+    enable = true;
+    enableZshIntegration = true;
+  };
 
   programs.starship = {
     enable = true;
@@ -168,8 +170,9 @@ with builtins; {
       ZSH_HIGHLIGHT_STYLES[default]='fg=#F8F8F2'
       ZSH_HIGHLIGHT_STYLES[cursor]='standout'
 
+      eval "$(zoxide init posix --hook prompt)"
 
-            pfetch
+      pfetch
     '';
   };
 }

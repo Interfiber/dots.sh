@@ -2,7 +2,7 @@
   imports = [
     ./hypr.nix # Wayland compositor config
     #    ./kitty.nix # Terminal config
-    ./wezterm.nix # Terminal config
+    ./alacritty.nix # Terminal config
     ./rofi.nix # Launcher config
     ./dunst.nix # Notification server config
     ./gtk.nix # GTK config

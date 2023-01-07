@@ -36,7 +36,7 @@ return {
 	default_cursor_style = "BlinkingUnderline",
 
 	-- Wayland
-	enable_wayland = true,
+	enable_wayland = false,
 
   -- Colors
   colors = {
