@@ -2,6 +2,7 @@
 with builtins; {
   programs.alacritty = {
     enable = true;
-    extraConfig = builtins.readFile ../configs/alacritty/alacritty.yml;
   };
+
+  xdg.configFile."alacritty/alacritty.yml".text = builtins.readFile ../configs/alacritty/alacritty.yml;
 }

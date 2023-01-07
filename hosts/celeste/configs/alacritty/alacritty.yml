@@ -38,3 +38,6 @@ font:
 
 window:
   opacity: 0.93
+
+cursor:
+  style: Beam
