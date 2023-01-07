@@ -35,108 +35,10 @@ return {
 	-- Cursor style
 	default_cursor_style = "BlinkingUnderline",
 
-	-- X11
-	enable_wayland = false,
+	-- Wayland
+	enable_wayland = true,
 
-	-- Keybinds
-	disable_default_key_bindings = true,
-	keys = {
-		{
-			key = [[\]],
-			mods = "CTRL|ALT",
-			action = wezterm.action({
-				SplitHorizontal = { domain = "CurrentPaneDomain" },
-			}),
-		},
-		{
-			key = [[\]],
-			mods = "CTRL",
-			action = wezterm.action({
-				SplitVertical = { domain = "CurrentPaneDomain" },
-			}),
-		},
-		{
-			key = "q",
-			mods = "CTRL",
-			action = wezterm.action({ CloseCurrentPane = { confirm = false } }),
-		},
-		{
-			key = "h",
-			mods = "CTRL|SHIFT",
-			action = wezterm.action({ ActivatePaneDirection = "Left" }),
-		},
-		{
-			key = "l",
-			mods = "CTRL|SHIFT",
-			action = wezterm.action({ ActivatePaneDirection = "Right" }),
-		},
-		{
-			key = "k",
-			mods = "CTRL|SHIFT",
-			action = wezterm.action({ ActivatePaneDirection = "Up" }),
-		},
-		{
-			key = "j",
-			mods = "CTRL|SHIFT",
-			action = wezterm.action({ ActivatePaneDirection = "Down" }),
-		},
-		{
-			key = "h",
-			mods = "CTRL|SHIFT|ALT",
-			action = wezterm.action({ AdjustPaneSize = { "Left", 1 } }),
-		},
-		{
-			key = "l",
-			mods = "CTRL|SHIFT|ALT",
-			action = wezterm.action({ AdjustPaneSize = { "Right", 1 } }),
-		},
-		{
-			key = "k",
-			mods = "CTRL|SHIFT|ALT",
-			action = wezterm.action({ AdjustPaneSize = { "Up", 1 } }),
-		},
-		{
-			key = "j",
-			mods = "CTRL|SHIFT|ALT",
-			action = wezterm.action({ AdjustPaneSize = { "Down", 1 } }),
-		},
-		{ -- browser-like bindings for tabbing
-			key = "t",
-			mods = "CTRL",
-			action = wezterm.action({ SpawnTab = "CurrentPaneDomain" }),
-		},
-		{
-			key = "w",
-			mods = "CTRL",
-			action = wezterm.action({ CloseCurrentTab = { confirm = false } }),
-		},
-		{
-			key = "Tab",
-			mods = "CTRL",
-			action = wezterm.action({ ActivateTabRelative = 1 }),
-		},
-		{
-			key = "Tab",
-			mods = "CTRL|SHIFT",
-			action = wezterm.action({ ActivateTabRelative = -1 }),
-		}, -- standard copy/paste bindings
-		{
-			key = "x",
-			mods = "CTRL",
-			action = "ActivateCopyMode",
-		},
-		{
-			key = "v",
-			mods = "CTRL|SHIFT",
-			action = wezterm.action({ PasteFrom = "Clipboard" }),
-		},
-		{
-			key = "c",
-			mods = "CTRL|SHIFT",
-			action = wezterm.action({ CopyTo = "ClipboardAndPrimarySelection" }),
-		},
-	},
-
+  -- Colors
   colors = {
 		foreground = "#dcd7ba",
 		background = "#1f1f28",
@@ -173,7 +75,7 @@ return {
 	-- General
 	automatically_reload_config = true,
 	inactive_pane_hsb = { saturation = 1.0, brightness = 1.0 },
-	window_background_opacity = 1.0,
+	window_background_opacity = 0.93,
 	window_close_confirmation = "NeverPrompt",
 	window_frame = { active_titlebar_bg = "#090909", font = font_with_fallback(font_name, { bold = true }) },
 }

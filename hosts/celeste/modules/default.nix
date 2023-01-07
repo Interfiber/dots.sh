@@ -1,7 +1,7 @@
 {self, ...}: {
   imports = [
     ./hypr.nix # Wayland compositor config
-#    ./kitty.nix # Terminal config
+    #    ./kitty.nix # Terminal config
     ./wezterm.nix # Terminal config
     ./rofi.nix # Launcher config
     ./dunst.nix # Notification server config

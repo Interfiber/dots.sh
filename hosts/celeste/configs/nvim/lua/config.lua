@@ -11,7 +11,7 @@ m.config = {
           dimInactive = true,
           functionTyle = { italic = true },
           typeStyle = { italic = true },
-          transparent = true,
+          transparent = false,
           theme = "default"
         })
 
