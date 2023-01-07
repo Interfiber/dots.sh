@@ -1,5 +1,8 @@
 {pkgs, ...}:
 with builtins; {
+  # Enable wayland support for electron
+  home.sessionVariables.NIXOS_OZONE_WL = "1";
+
   programs.starship = {
     enable = true;
     enableZshIntegration = true;

@@ -127,7 +127,13 @@ function setupColorScheme(config)
 		if base16 ~= -1 then
 			require('base16-colorscheme').setup(colorscheme)
 		end
-	end
+  elseif config.type == "colorscheme" then
+    vim.opt.background = "dark"
+
+    pcall(vim.cmd, "colorscheme "..config.name)
+  elseif config.type == "function" then
+    config.setup()
+  end
 end
 
 m.makeColorscheme = function (config)

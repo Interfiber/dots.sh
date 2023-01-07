@@ -5,14 +5,19 @@ m.config = {
 	appearance = {
 		colorscheme = lib.makeColorscheme({
 			termGuiColors = true,
-			type = "base16",
-			setupConfig = {
-				style = "decayce",
-				nvim_tree = {
-					contrast = true
-				}
-			},
-			name = "paradise"
+			type = "function",
+      setup = function ()
+        require("kanagawa").setup({
+          dimInactive = true,
+          functionTyle = { italic = true },
+          typeStyle = { italic = true },
+          transparent = true,
+          theme = "default"
+        })
+
+        vim.cmd("colorscheme kanagawa")
+      end,
+			name = "kanagawa"
 		}),
 	},
 	editor = {
@@ -128,6 +133,7 @@ m.config = {
       lib.makePackage("lukas-reineke/lsp-format.nvim", {}),
 			lib.makePackage("RRethy/nvim-base16", {}),
       lib.makePackage("andweeb/prensence.nvim", {}),
+      lib.makePackage("rebelot/kanagawa.nvim", {}),
 
 			lib.makePackerPackage()
 		}

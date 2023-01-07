@@ -4,6 +4,7 @@ let
     url = "https://raw.githubusercontent.com/NixOS/nixos-artwork/master/logo/nix-snowflake.svg";
     sha256 = "14mbpw8jv1w2c5wvfvj8clmjw0fi956bq5xf9s2q3my14far0as8";
   };
+  colors = import ../theme/colors.nix {};
 in ''
   * {
     border: none;
@@ -13,7 +14,7 @@ in ''
     font-size: 13px;
   }
   window#waybar {
-    background-color: #151515;
+    background-color: ${colors.bg};
     transition-property: background-color;
     transition-duration: 0.5s;
   }
@@ -43,7 +44,7 @@ in ''
    background-color: #98d3ee;
   }
   #workspaces button.urgent {
-    background-color: #dd6777;
+    background-color: ${colors.red};
   }
   #custom-weather,
   #custom-swallow,
@@ -80,19 +81,19 @@ in ''
     animation-direction: alternate;
   }
   #pulseaudio.microphone {
-    background-color: #B66467;
+    background-color: ${colors.red};
   }
   #pulseaudio {
-    background-color: #8AA6A2;
+    background-color: ${colors.cyan};
   }
   #network {
-    background-color: #8C977D;
+    background-color: ${colors.green};
   }
   #clock.date {
-    background-color: #8DA3B9;
+    background-color: ${colors.blue};
   }
   #clock {
-    background-color: #8DA3B9;
+    background-color: ${colors.blue};
   }
   tooltip {
     font-family: "Inter", sans-serif;

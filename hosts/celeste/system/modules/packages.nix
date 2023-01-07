@@ -5,6 +5,7 @@ with builtins; {
     experimental-features = nix-command flakes
   '';
 
+  # Allows steam to be installed
   nixpkgs.config.allowUnfree = true;
 
   nix.settings = {
@@ -20,6 +21,17 @@ with builtins; {
     kitty
     git
     polkit_gnome
+
+    (appimageTools.wrapType2
+      {
+        # or wrapType1
+        name = "WebCord";
+        src = fetchurl {
+          url = "https://github.com/SpacingBat3/WebCord/releases/download/v4.1.1/WebCord-4.1.1-x64.AppImage";
+          sha256 = "sha256-wYrCTt1Wx0g8InfdRLz0zGBXwCa/eDLtJfg4ag9+4y4=";
+        };
+        extraPkgs = pkgs: with pkgs; [pipewire libdrm];
+      })
   ];
 
   programs.sway.enable = true;

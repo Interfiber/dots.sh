@@ -17,11 +17,10 @@
     home-manager,
     hyprland,
     ...
-  }: let
+  } @ inputs: let
     system = "x86_64-linux";
     pkgs = import nixpkgs {
       inherit system;
-      config = {allowUnfree = true;}; # in the future remove discord
     };
     hostname = "celeste";
     lib = nixpkgs.lib;

@@ -2,17 +2,17 @@ local m = {}
 local lib = require("lib")
 
 local colors = {
-  bg       = '#151515',
-  fg       = '#E8E3E3',
-  yellow   = '#D9BC8C',
-  cyan     = '#8AA6A2',
-  darkblue = '#8DA3B9',
-  green    = '#8C977D',
+  bg       = '#1F1F28',
+  fg       = '#DCD7BA',
+  yellow   = '#C0A36E',
+  cyan     = '#6A9589',
+  darkblue = '#7E9CD8',
+  green    = '#76846A',
   orange   = '#FF8800',
   violet   = '#a9a1e1',
-  magenta  = '#A988B0',
-  blue     = '#8DA3B9',
-  red      = '#B66467',
+  magenta  = '#957FB8',
+  blue     = '#7E9CD8',
+  red      = '#C34043',
 }
 
 local conditions = {

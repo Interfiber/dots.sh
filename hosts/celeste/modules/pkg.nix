@@ -1,14 +1,7 @@
 {pkgs, ...}:
 with builtins; {
-  nixpkgs.overlays = let
-    discordOverlay = self: super: {
-      discord = super.discord.override {withOpenASAR = true;}; # Discord with openASR is faster
-    };
-  in [discordOverlay];
-
   home.packages = with pkgs; [
     # user interfaces
-    discord
     pcmanfm
     firefox-devedition-bin
     pavucontrol

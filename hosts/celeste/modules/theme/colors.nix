@@ -1,20 +1,14 @@
-{}:
-
-rec {
-  bg-darker = "#10101a";
-  bg = "#12121c";
-  bg-contrast = "#171721";
-  bg-lighter = "#1c1c26";
-  black = "#21212b";
-  dimblack = "#262630";
-  light-black = "#2b2b35";
-  fg = "#c3cddb";
-  white = "#c8d2e0";
+{}: rec {
+  bg = "#1F1F28";
+  black = "#090618";
+  dimblack = "#727169";
+  fg = "#DCD7BA";
+  white = "#C8C093";
   grey = "#292933";
-  red = "#fa9a9a";
-  yellow = "#f8e7b7";
-  magenta = "#bfa6fa";
-  green = "#b0e2ae";
-  blue = "#8cbef7";
-  cyan = "#93cff7";
+  red = "#C34043";
+  yellow = "#C0A36E";
+  magenta = "#957FB8";
+  green = "#76946A";
+  blue = "#7E9CD8";
+  cyan = "#6A9589";
 }
