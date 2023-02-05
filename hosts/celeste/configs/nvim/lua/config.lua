@@ -7,15 +7,19 @@ m.config = {
 			termGuiColors = true,
 			type = "function",
       setup = function ()
-        require("kanagawa").setup({
-          dimInactive = true,
-          functionTyle = { italic = true },
-          typeStyle = { italic = true },
-          transparent = false,
-          theme = "default"
-        })
+		local kanagawa = lib.requireLoad("kanagawa")
 
-        vim.cmd("colorscheme kanagawa")
+		if kanagawa ~= -1 then
+			require("kanagawa").setup({
+				dimInactive = true,
+				functionTyle = { italic = true },
+				typeStyle = { italic = true },
+				transparent = false,
+				theme = "default"
+			})
+
+			vim.cmd("colorscheme kanagawa")
+		end
       end,
 			name = "kanagawa"
 		}),

@@ -2,4 +2,4 @@
 
 swww init
 sleep 1
-swww img ~/.df/wallpapers/wallpaper_sea.jpg
+swww img ~/.df/wallpapers/wallpaper_sea7.jpg

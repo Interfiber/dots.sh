@@ -4,8 +4,11 @@
   ...
 }:
 with builtins; {
+  home.packages = with pkgs; [
+    pkgs.rofi-wayland
+  ];
+
   programs.rofi = {
-    enable = true;
     theme = ../configs/rofi/theme.rasi;
   };
 
