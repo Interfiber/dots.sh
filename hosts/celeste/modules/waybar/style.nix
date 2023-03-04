@@ -11,7 +11,7 @@ in ''
     border-radius: 0;
     min-height: 0;
     font-family: Material Design Icons, JetBrainsMono Nerd Font Mono;
-    font-size: 13px;
+    font-size: 16px;
   }
   window#waybar {
     background-color: ${colors.bg};
@@ -30,13 +30,13 @@ in ''
     box-shadow: inset 0 -3px transparent; /* Use box-shadow instead of border so the text isn't offset */
     padding: 6px 9px;
     margin: 6px 3px;
-    background-color: #424242;
-    color: #cdd6f4;
+    background-color: #1f2329;
+    color: ${colors.fg};
     border-radius: 5px;
   }
   #workspaces button.active {
     color: #1e1e2e;
-    background-color: #8DA3B9;
+    background-color: #98d3ee;
   }
   #workspaces button:hover {
    box-shadow: inherit;
@@ -60,7 +60,7 @@ in ''
   #tray {
     margin: 6px 3px;
     padding: 6px 12px;
-    background-color: #151720;
+    background-color: ${colors.bg};
     color: #181825;
     border-radius: 5px;
   }
@@ -89,7 +89,7 @@ in ''
     background-color: ${colors.cyan};
   }
   #network {
-    background-color: ${colors.green};
+    background-color: ${colors.cyan};
   }
   #clock.date {
     background-color: ${colors.blue};

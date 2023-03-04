@@ -5,10 +5,10 @@
   fg = "#b6beca";
   white = "#C8C093";
   grey = "#292933";
-  red = "#C34043";
+  red = "#e05f65";
   yellow = "#C0A36E";
   magenta = "#957FB8";
-  green = "#76946A";
-  blue = "#7E9CD8";
+  green = "#78dba9";
+  blue = "#70a5eb";
   cyan = "#6A9589";
 }

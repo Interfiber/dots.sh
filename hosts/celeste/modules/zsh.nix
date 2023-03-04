@@ -98,6 +98,7 @@ with builtins; {
             export TERMINAL="kitty"
             export BROWSER="firefox-devedition"
             export MOZ_ENABLE_WAYLAND=1
+            export GTK_THEME=Dark-decay # Make libadwaita use gtk theme
 
             export XDG_DATA_HOME="$HOME/.local/share"
             export XDG_CONFIG_HOME="$HOME/.config"

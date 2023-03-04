@@ -1,9 +1,12 @@
 * {
     font:                        "JetBrainsMono Nerd Font 18";
-    background:                  #1F1F28;
-    background-alt:              #292933;
-    foreground:                  #DCD7BA;
-    selected:                    #7E9CD8;
-    active:                      #76946A;
-    urgent:                      #C34043;
+    bg-col:  #101419;
+    bg-col-light: #101419;
+    border-col: #8cc1ff;
+    selected-col: #1f2329;
+    blue: #8cc1ff;
+    fg-col: #b6beca;
+    fg-col2: #b6beca;
+    grey: #1f2329;
+    width: 600;
 }
