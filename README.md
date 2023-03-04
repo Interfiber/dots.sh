@@ -17,7 +17,3 @@
     - [user](hosts/celeste/user) Home manager config
     - [configs](hosts/celeste/configs) Program configs
     - [system](hosts/celeste/system) NixOS configuration
-
-## More screenshots
-
-![](./assets/grub.jpg)
