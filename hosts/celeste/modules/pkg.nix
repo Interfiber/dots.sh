@@ -2,7 +2,7 @@
 with builtins; {
   home.packages = with pkgs; [
     # user interfaces
-    pcmanfm
+    gnome.nautilus
     firefox-devedition-bin
     pavucontrol
     signal-desktop
@@ -26,5 +26,7 @@ with builtins; {
     ripgrep
     ffmpeg
     gcc # Always have a C compiler
+
+    grapejuice
   ];
 }

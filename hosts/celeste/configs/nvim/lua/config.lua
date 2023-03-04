@@ -6,22 +6,24 @@ m.config = {
 		colorscheme = lib.makeColorscheme({
 			termGuiColors = true,
 			type = "function",
-      setup = function ()
-		local kanagawa = lib.requireLoad("kanagawa")
+			setup = function()
+				local decay = lib.requireLoad("decay")
 
-		if kanagawa ~= -1 then
-			require("kanagawa").setup({
-				dimInactive = true,
-				functionTyle = { italic = true },
-				typeStyle = { italic = true },
-				transparent = false,
-				theme = "default"
-			})
+				if decay ~= -1 then
+					decay.setup({
+						style = "dark",
+						nvim_tree = {
+							contrast = true, -- nvim tree contrast
+						},
 
-			vim.cmd("colorscheme kanagawa")
-		end
-      end,
-			name = "kanagawa"
+						italics = {
+							code = true,
+							comments = true, -- to disable italic comments, replace to true to enable
+						},
+					})
+				end
+			end,
+			name = "decay",
 		}),
 	},
 	editor = {
@@ -34,79 +36,79 @@ m.config = {
 			enableSmartIndent = true,
 			enableLineNumbers = true,
 			enableRelativeLineNumbers = true,
-			removeBufferSeperator = true
+			removeBufferSeperator = true,
 		}),
 	},
 	lsp = {
 		enable = true,
 		servers = {
 			lib.makeLspServer("rust_analyzer", {}),
-			lib.makeLspServer("clangd", {})
+			lib.makeLspServer("clangd", {}),
 		},
 		cmp = require("modules").getModule("cmp"),
-		features = require("modules").getModule("lsp_features")
+		features = require("modules").getModule("lsp_features"),
 	},
 	modules = {
 		treesitter = {
 			enable = true,
-			module = require("modules").getModule("treesitter")
+			module = require("modules").getModule("treesitter"),
 		},
 		bufferline = {
 			enable = true,
-			module = require("modules").getModule("bufferline")
+			module = require("modules").getModule("bufferline"),
 		},
 		lualine = {
 			enable = true,
-			module = require("modules").getModule("lualine")
+			module = require("modules").getModule("lualine"),
 		},
 		nvimtree = {
 			enable = true,
-			module = require("modules").getModule("nvimtree")
+			module = require("modules").getModule("nvimtree"),
 		},
 		indent_blankline = {
 			enable = true,
-			module = require("modules").getModule("indent_blankline")
+			module = require("modules").getModule("indent_blankline"),
 		},
 		trouble = {
 			enable = true,
-			module = require("modules").getModule("trouble")
+			module = require("modules").getModule("trouble"),
 		},
 		alpha = {
 			enable = true,
-			module = require("modules").getModule("alpha")
+			module = require("modules").getModule("alpha"),
 		},
 		neoscroll = {
 			enable = true,
-			module = require("modules").getModule("neoscroll")
+			module = require("modules").getModule("neoscroll"),
 		},
 		noice = {
 			enable = true,
-			module = require("modules").getModule("noice")
-		}
+			module = require("modules").getModule("noice"),
+		},
 	},
 	keyboard = {
 		leader = lib.makeLeader(" "),
 		bindings = {
-			lib.makeBinding("<Leader>q",  ":q"),
-			lib.makeBinding("<Leader>f",  ":Telescope find_files"),
-			lib.makeBinding("<Leader>w",  ":bd"),
-			lib.makeBinding("<Leader>t",  ":NvimTreeToggle"),
-			lib.makeBinding("<Leader>h",  ":bprev"),
-			lib.makeBinding("<Leader>l",  ":bnext"),
-			lib.makeBinding("<Leader>p",  ":Trouble"),
-      		lib.makeBinding("<Leader>to", ":TodoTelescope"),
-      		lib.makeBinding("<Leader>tr", ":TodoTrouble"),
-      		lib.makeBinding("<Leader>g",  ":Telescope grep_string")
-		}
+			lib.makeBinding("<Leader>q", ":q"),
+			lib.makeBinding("<Leader>f", ":Telescope find_files"),
+			lib.makeBinding("<Leader>w", ":bd"),
+			lib.makeBinding("<Leader>t", ":NvimTreeToggle"),
+			lib.makeBinding("<Leader>h", ":bprev"),
+			lib.makeBinding("<Leader>l", ":bnext"),
+			lib.makeBinding("<Leader>p", ":Trouble"),
+			lib.makeBinding("<Leader>to", ":TodoTelescope"),
+			lib.makeBinding("<Leader>tr", ":TodoTrouble"),
+			lib.makeBinding("<Leader>g", ":Telescope grep_string"),
+		},
 	},
 	packer = {
 		packages = {
 			lib.makePackage("decaycs/decay.nvim", {}),
 			lib.makePackage("nvim-telescope/telescope.nvim", {
-				requires = { lib.makePackage("nvim-lua/plenary.nvim", {}) }
+				requires = { lib.makePackage("nvim-lua/plenary.nvim", {}) },
 			}),
 			lib.makePackage("nvim-treesitter/nvim-treesitter", {
-				run = ':TSUpdate'
+				run = ":TSUpdate",
 			}),
 			lib.makePackage("nvim-tree/nvim-web-devicons", {}),
 			lib.makePackage("akinsho/bufferline.nvim", {}),
@@ -131,17 +133,16 @@ m.config = {
 			lib.makePackage("karb94/neoscroll.nvim", {}),
 			lib.makePackage("windwp/nvim-autopairs", {}),
 			lib.makePackage("folke/noice.nvim", {
-				requires = { lib.makePackage("MunifTanjim/nui.nvim", {}), lib.makePackage("rcarriga/nvim-notify", {}) }
+				requires = { lib.makePackage("MunifTanjim/nui.nvim", {}), lib.makePackage("rcarriga/nvim-notify", {}) },
 			}),
-      lib.makePackage("folke/todo-comments.nvim", {}),
-      lib.makePackage("lukas-reineke/lsp-format.nvim", {}),
+			lib.makePackage("folke/todo-comments.nvim", {}),
+			lib.makePackage("lukas-reineke/lsp-format.nvim", {}),
 			lib.makePackage("RRethy/nvim-base16", {}),
-      lib.makePackage("andweeb/prensence.nvim", {}),
-      lib.makePackage("rebelot/kanagawa.nvim", {}),
+			lib.makePackage("decaycs/decay.nvim", {}),
 
-			lib.makePackerPackage()
-		}
-	}
+			lib.makePackerPackage(),
+		},
+	},
 }
 
 return m

@@ -92,13 +92,12 @@ with builtins; {
     dotDir = ".config/zsh";
 
     envExtra = ''
-
-            export GDK_SCALE=1 # fix steam floating awayyyyyyy
             export PASSWORD_STORE_DIR=$HOME/external/pass
 
             export EDITOR="nvim"
             export TERMINAL="kitty"
             export BROWSER="firefox-devedition"
+            export MOZ_ENABLE_WAYLAND=1
 
             export XDG_DATA_HOME="$HOME/.local/share"
             export XDG_CONFIG_HOME="$HOME/.config"

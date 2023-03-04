@@ -3,13 +3,13 @@ with builtins; {
   gtk = {
     enable = true;
     theme = {
-      name = "Kanagawa-B";
-      package = pkgs.callPackage ../../../pkgs/kanagawa-gtk.nix {};
+      name = "Dark-decay";
+      package = pkgs.callPackage ../../../pkgs/decay-gtk.nix {};
     };
 
     iconTheme = {
-      name = "breeze-dark";
-      package = pkgs.breeze-icons;
+      name = "Adwaita";
+      package = pkgs.gnome.adwaita-icon-theme;
     };
     gtk3.extraConfig = {
       gtk-xft-antialias = 1;

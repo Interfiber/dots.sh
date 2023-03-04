@@ -1,8 +1,8 @@
 {}: rec {
-  bg = "#1F1F28";
+  bg = "#101419";
   black = "#090618";
   dimblack = "#727169";
-  fg = "#DCD7BA";
+  fg = "#b6beca";
   white = "#C8C093";
   grey = "#292933";
   red = "#C34043";

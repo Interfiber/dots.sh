@@ -7,6 +7,7 @@ OFF='\033[0m'       # Text Reset
 RED='\033[0;31m'          # Red
 BLUE='\033[0;34m'         # Blue
 
+export NIX_FLAGS="--extra-experimental-features flakes --extra-experimental-features nix-command"
 export AUTHPATH="$(which sudo)"
 
 if [[ -f "$(which doas)" ]]; then
@@ -18,7 +19,7 @@ function log(){
 }
 
 function homeManagerSetup(){
-	nix run '.#activate/celeste'
+	nix run '.#activate/celeste' $NIX_FLAGS
 }
 
 log "Bootstrap github: https://github.com/Interfiber/dotfiles"
@@ -26,9 +27,9 @@ log "Bootstrap author: Interfiber<webmaster@interfiber.dev>"
 echo ""
 echo ""
 log "Formatting codebase..."
-nix run nixpkgs#alejandra -- .
+nix run $NIX_FLAGS nixpkgs#alejandra -- .
 log "Updating Nix flake lock file..."
-nix flake update
+nix flake update $NIX_FLAGS
 
 if [[ "$1" == "--only-home-manager" ]]; then 
   log "Building home-manager config flake..."

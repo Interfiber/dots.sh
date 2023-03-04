@@ -1,13 +1,11 @@
 local m = {}
 local lib = require("lib")
 
-m.activate = function ()
+m.activate = function()
 	local tree = lib.requireLoad("nvim-tree")
 
 	if tree ~= -1 then
-		tree.setup({
-			
-		})
+		tree.setup({})
 	end
 end
 

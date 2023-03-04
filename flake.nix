@@ -30,7 +30,17 @@
 
       modules = [
         hyprland.homeManagerModules.default
-        {wayland.windowManager.hyprland.enable = true;}
+
+        {
+          wayland.windowManager.hyprland = {
+            enable = true;
+            xwayland = {
+              enable = true;
+              hidpi = false;
+            };
+            nvidiaPatches = false;
+          };
+        }
         ./hosts/celeste/user/home.nix
       ];
     };

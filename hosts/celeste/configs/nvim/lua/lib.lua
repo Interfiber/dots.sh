@@ -1,29 +1,28 @@
 local m = {}
 
-
-m.installPacker = function ()
+m.installPacker = function()
 	if m.requireLoad("packer") == -1 then
 		-- install packer
-		os.execute("git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim")
+		os.execute(
+			"git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim"
+		)
 		return true
 	end
 	return false
 end
 
-m.loadConfig = function (config)
-
+m.loadConfig = function(config)
 	-- load config
 	if m.installPacker() == false then
 		-- load color scheme
 		config.appearance.colorscheme.activate()
-
 
 		-- enable modules
 		for k, v in pairs(config.modules) do
 			if v.enable then
 				v.module.activate()
 			else
-				print("Not enabling module: "..k)
+				print("Not enabling module: " .. k)
 			end
 		end
 
@@ -38,8 +37,8 @@ m.loadConfig = function (config)
 		config.editor.options.activate()
 
 		-- load plugins
-		require("packer").startup(function (use)
-			for k,v in pairs(config.packer.packages) do
+		require("packer").startup(function(use)
+			for k, v in pairs(config.packer.packages) do
 				v.activate(use)
 
 				-- install submodules
@@ -48,7 +47,6 @@ m.loadConfig = function (config)
 						dep.activate(use)
 					end
 				end
-
 			end
 		end)
 
@@ -68,7 +66,7 @@ m.loadConfig = function (config)
 	end
 end
 
-m.requireLoad = function (moduleName)
+m.requireLoad = function(moduleName)
 	if pcall(require, moduleName) then
 		return require(moduleName)
 	else
@@ -76,24 +74,24 @@ m.requireLoad = function (moduleName)
 	end
 end
 
-m.makeLspServer = function (serverName, config)
+m.makeLspServer = function(serverName, config)
 	return {
 		name = serverName,
 		cfg = config,
-		activate = function ()
-			local capabilities = require('cmp_nvim_lsp').default_capabilities()
-			
-			require("lspconfig")[serverName].setup {
+		activate = function()
+			local capabilities = require("cmp_nvim_lsp").default_capabilities()
+
+			require("lspconfig")[serverName].setup({
 				capabilities = capabilities,
 				on_attach = function(client, bufnr)
 					local navic = require("nvim-navic")
-          local format = require("lsp-format")
+					local format = require("lsp-format")
 
-				  navic.attach(client, bufnr)
-          format.on_attach(client)
-				end
-			}
-		end
+					navic.attach(client, bufnr)
+					format.on_attach(client)
+				end,
+			})
+		end,
 	}
 end
 
@@ -104,7 +102,7 @@ function setupColorScheme(config)
 		if colorscheme == -1 then
 			return
 		end
-	
+
 		if colorscheme.termGuiColors then
 			vim.opt.termguicolors = true
 		end
@@ -125,70 +123,70 @@ function setupColorScheme(config)
 		local base16 = m.requireLoad("base16-colorscheme")
 
 		if base16 ~= -1 then
-			require('base16-colorscheme').setup(colorscheme)
+			require("base16-colorscheme").setup(colorscheme)
 		end
-  elseif config.type == "colorscheme" then
-    vim.opt.background = "dark"
+	elseif config.type == "colorscheme" then
+		vim.opt.background = "dark"
 
-    pcall(vim.cmd, "colorscheme "..config.name)
-  elseif config.type == "function" then
-    config.setup()
-  end
+		pcall(vim.cmd, "colorscheme " .. config.name)
+	elseif config.type == "function" then
+		config.setup()
+	end
 end
 
-m.makeColorscheme = function (config)
+m.makeColorscheme = function(config)
 	return {
 		cfg = config,
-		activate = function ()
+		activate = function()
 			setupColorScheme(config)
-		end
+		end,
 	}
 end
 
-m.makePackage = function (repo, config)
+m.makePackage = function(repo, config)
 	return {
 		name = repo,
 		cfg = config,
-		activate = function (use)
+		activate = function(use)
 			use(repo, {
 				run = config.run,
 			})
-		end
+		end,
 	}
 end
 
-m.makePackerPackage = function ()
-	return m.makePackage('wbthomason/packer.nvim', {})
+m.makePackerPackage = function()
+	return m.makePackage("wbthomason/packer.nvim", {})
 end
 
-m.makeBinding = function (binding, action)
+m.makeBinding = function(binding, action)
 	return {
 		binding = binding,
 		action = action,
-		activate = function ()
-			vim.api.nvim_set_keymap("n", binding, action.."<CR>", { noremap = true })
-		end
+		activate = function()
+			vim.api.nvim_set_keymap("n", binding, action .. "<CR>", { noremap = true })
+		end,
 	}
 end
 
-m.makeLeader = function (leader)
+m.makeLeader = function(leader)
 	return {
 		leader = leader,
-		activate = function ()
+		activate = function()
 			vim.g.mapleader = leader
-		end
+		end,
 	}
 end
 
-m.makeEditorOptions = function (config)
+m.makeEditorOptions = function(config)
 	return {
 		cfg = config,
-		activate = function ()
+		activate = function()
 			vim.opt.tabstop = config.tabSize
 			vim.opt.softtabstop = config.tabSize
 			vim.opt.shiftwidth = config.tabSize
 			vim.opt.expandtab = true
-			
+
 			vim.opt.swapfile = config.enableSwapFile
 
 			vim.opt.hlsearch = config.hlSearch
@@ -199,13 +197,12 @@ m.makeEditorOptions = function (config)
 			vim.opt.smartindent = config.enableSmartIndent
 			vim.opt.nu = config.enableLineNumbers
 			vim.opt.relativenumber = config.enableRelativeLineNumbers
-		
-			if config.removeBufferSeperator then
-				vim.cmd "set fillchars+=vert:\\  "
-			end
-		end
-	}
 
+			if config.removeBufferSeperator then
+				vim.cmd("set fillchars+=vert:\\  ")
+			end
+		end,
+	}
 end
 
 return m

@@ -9,7 +9,7 @@ with builtins; {
 
   programs.swaylock = {
     settings = {
-      image = "/home/interfiber/.df/wallpapers/wallpaper_minecraft_mangrove_swamp_3840x2160.png";
+      image = "/home/interfiber/.df/wallpapers/wallpaper_hlep2_04.jpg";
       clock = true;
       color = "00000000";
       font = "JetBrainsMono Nerd Font Mono";
@@ -39,7 +39,7 @@ with builtins; {
       bs-hl-color = "#f38ba8";
       line-uses-ring = false;
       datestr = "%d.%m";
-      effect-blur = "5x5";
+      effect-blur = "2x2";
       ignore-empty-password = true;
     };
   };
