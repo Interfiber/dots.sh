@@ -6,9 +6,6 @@ m.activate = function()
 
 	if lualine ~= -1 then
 		lualine.setup({
-			options = {
-				theme = "vscode",
-			},
 		})
 	end
 end

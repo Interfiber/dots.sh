@@ -4,6 +4,10 @@ with builtins; {
   hardware.xpadneo.enable = true;
   boot.extraModprobeConfig = ''options bluetooth disable_ertm=1 ''; # Fix pls :)
 
+  hardware.opengl.extraPackages = with pkgs; [
+    amdvlk
+  ];
+
   # 32-bit GPU drivers
   hardware.opengl.driSupport32Bit = true;
 

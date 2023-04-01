@@ -23,6 +23,7 @@ in {
     settings = {
       mainBar = {
         position = "top";
+        layer = "top";
         fixed-center = true;
         height = 34;
         modules-left = [
