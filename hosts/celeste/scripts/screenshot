@@ -6,6 +6,7 @@ function getHelp(){
   echo "Usage: screenshot [commands]"
   echo "Options:"
   echo "  --area     - Only capture an area of the screen(select with slurp)"
+  echo "  --scree    - Capture the entire screen"
   echo "  --notify   - Send a notification with Dunst after the screenshot is taken"
   echo "  --copy     - Copy the screenshot to the clipboard"
 }
