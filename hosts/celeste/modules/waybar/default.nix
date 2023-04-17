@@ -22,10 +22,10 @@ in {
 
     settings = {
       mainBar = {
-        position = "top";
+        position = "left";
         layer = "top";
         fixed-center = true;
-        height = 34;
+        width = 40;
         modules-left = [
           "wlr/workspaces"
         ];
@@ -33,11 +33,8 @@ in {
         modules-center = ["custom/rapd"];
 
         modules-right = [
-          "pulseaudio#microphone"
           "pulseaudio"
           "network"
-          "clock#date"
-          "clock"
           "tray"
         ];
 
@@ -49,9 +46,6 @@ in {
         "wlr/workspaces" = {
           on-click = "activate";
           format = "{name}";
-          all-outputs = true;
-          disable-scroll = true;
-          active-only = false;
         };
 
         tray = {
@@ -71,34 +65,20 @@ in {
         };
 
         network = {
-          format-wifi = "󰖩 {essid}";
-          format-ethernet = "󰈀 {ipaddr}/{cidr}";
-          format-alt = "󱛇";
-          format-disconnected = "󰖪";
-          tooltip-format = ''
-            󰅃 {bandwidthUpBytes} 󰅀 {bandwidthDownBytes}
-            {ipaddr}/{ifname} via {gwaddr} ({signalStrength}%)'';
+          format-wifi = "󰖩";
+          format-disconnected = "睊";
+          tooltip = false;
         };
 
         pulseaudio = {
-          tooltip = false;
-          format = "{icon} {volume}%";
-          format-muted = "󰖁";
-          format-icons = {default = ["󰕿" "󰖀" "󰕾"];};
-          tooltip-format = "{desc}, {volume}%";
-          on-click = "${pamixer} -t";
-          on-scroll-up = "${pamixer} -i 1";
-          on-scroll-down = "${pamixer} -d 1";
-        };
-
-        "pulseaudio#microphone" = {
-          tooltip = false;
-          format = "{format_source}";
-          format-source = "󰍬 {volume}%";
-          format-source-muted = "󰍭";
-          on-click = "${pamixer} --default-source -t";
-          on-scroll-up = "${pamixer} --default-source -i 1";
-          on-scroll-down = "${pamixer} --default-source -d 1";
+          format = "{icon}";
+          format-bluetooth = "{icon}";
+          format-muted = "婢";
+          on-click = "pavucontrol";
+          format-icons = {
+            headphone = "";
+            default = ["" "" "墳" ""];
+          };
         };
       };
     };

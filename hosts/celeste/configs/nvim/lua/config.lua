@@ -11,7 +11,7 @@ m.config = {
 
 				if decay ~= -1 then
 					decay.setup({
-						style = "dark",
+						style = "decayce",
 						nvim_tree = {
 							contrast = true, -- nvim tree contrast
 						},

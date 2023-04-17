@@ -12,23 +12,23 @@
     (modulesPath + "/installer/scan/not-detected.nix")
   ];
 
-  boot.initrd.availableKernelModules = ["xhci_pci" "ahci" "nvme" "usbhid" "usb_storage" "sd_mod"];
+  boot.initrd.availableKernelModules = ["xhci_pci" "ahci" "nvme" "usbhid" "uas" "sd_mod"];
   boot.initrd.kernelModules = [];
   boot.kernelModules = ["kvm-amd"];
   boot.extraModulePackages = [];
 
   fileSystems."/" = {
-    device = "/dev/disk/by-uuid/31e2024d-7b37-4318-86d8-f9bb049835f7";
+    device = "/dev/disk/by-uuid/f992c3fa-8551-45fb-8813-139ca1fcfc16";
     fsType = "ext4";
   };
 
   fileSystems."/boot/efi" = {
-    device = "/dev/disk/by-uuid/9818-5506";
+    device = "/dev/disk/by-uuid/5C03-EB5B";
     fsType = "vfat";
   };
 
   swapDevices = [
-    {device = "/dev/disk/by-uuid/f76f3697-edcd-4166-879e-8f3d75bc41cc";}
+    {device = "/dev/disk/by-uuid/009cf21d-17c3-4cfe-89fe-726784d4c5f8";}
   ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
@@ -41,6 +41,4 @@
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
-  # high-resolution display
-  hardware.video.hidpi.enable = lib.mkDefault true;
 }

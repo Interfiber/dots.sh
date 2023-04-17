@@ -22,5 +22,5 @@ with builtins; {
   boot.initrd.kernelModules = ["amdgpu"]; # Not required, nice to have though, starts GPU drivers before systemd starts
 
   # etc
-  boot.cleanTmpDir = true; # Dont keep crap laying around, saves disk space, and fixes problems with IPC sockets sometimes
+  boot.tmp.cleanOnBoot = true; # Dont keep crap laying around, saves disk space, and fixes problems with IPC sockets sometimes
 }

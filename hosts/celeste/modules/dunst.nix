@@ -15,7 +15,7 @@ in
 
       settings = {
         "global" = {
-          frame_color = "#89B4FA";
+          frame_color = "#a5b6cf";
           frame_width = 2;
 
           show_indicators = "no";
@@ -49,6 +49,7 @@ in
         "urgency_critical" = {
           background = "${colors.bg}";
           foreground = "${colors.fg}";
+          frame_color = "#e26c7c";
         };
       };
     };

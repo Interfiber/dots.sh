@@ -1,0 +1,77 @@
+#!/usr/bin/env bash
+
+
+function getHelp(){
+  echo "screenshot - Screenshot utility"
+  echo "Usage: screenshot [commands]"
+  echo "Options:"
+  echo "  --area     - Only capture an area of the screen(select with slurp)"
+  echo "  --notify   - Send a notification with Dunst after the screenshot is taken"
+  echo "  --copy     - Copy the screenshot to the clipboard"
+}
+
+if [[ "$1" == "" ]]; then
+  getHelp
+  exit -1
+fi
+
+NOTIFY=no
+COPY=no
+MODE=
+
+while [ $# -gt 0 ]; do
+  key="$1"
+  case $key in
+    --notify)
+      NOTIFY=yes
+      shift
+      ;;
+    --area)
+      MODE="area"
+      shift
+      ;;
+    --screen)
+      MODE="screen"
+      shift
+      ;;
+    --copy)
+      COPY=yes
+      shift
+      ;;
+    *)
+      break
+      ;;
+  esac
+done
+
+echo "Using config:"
+echo "MODE=$MODE"
+echo "NOTIFY=$NOTIFY"
+
+FILE_PATH=/tmp/screenshot_tmp.png
+
+if [[ "$MODE" == "area" ]]; then
+  grim -g "$(slurp)" $FILE_PATH
+fi
+
+if [[ "$MODE" == "screen" ]]; then
+  grim $FILE_PATH
+fi
+
+if [[ "$COPY" == "yes" ]]; then
+  wl-copy < $FILE_PATH
+fi
+
+NEW_FILE_PATH=$HOME/Pictures/$(date +%s%3N).png
+mv $FILE_PATH $NEW_FILE_PATH
+
+if [[ "$NOTIFY" == "yes" ]]; then
+  
+  if [[ "$COPY" == "yes" ]]; then
+    notify-send -i $NEW_FILE_PATH "Screenshot taken" "Screenshot copied to your clipboard"
+  fi
+
+  if [[ "$COPY" == "no" ]]; then
+    notify-send -i $NEW_FILE_PATH "Screenshot taken" "Screenshot located at $NEW_FILE_PATH"
+  fi
+fi

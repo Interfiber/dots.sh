@@ -3,7 +3,7 @@ with builtins; {
   gtk = {
     enable = true;
     theme = {
-      name = "Dark-decay";
+      name = "Decayce";
       package = pkgs.callPackage ../../../pkgs/decay-gtk.nix {};
     };
 

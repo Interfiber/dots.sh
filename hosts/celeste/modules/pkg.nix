@@ -12,6 +12,7 @@ with builtins; {
 
     # wayland
     grim
+    slurp
     feh
 
     # flex
