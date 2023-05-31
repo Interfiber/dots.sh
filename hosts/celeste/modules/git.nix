@@ -1,11 +1,8 @@
 {pkgs, ...}:
 with builtins; {
-  home.packages = with pkgs; [
-    git-lfs
-  ];
-
   programs.git = {
     enable = true;
+    lfs.enable = true;
     package = pkgs.gitFull;
 
     userName = "Interfiber";

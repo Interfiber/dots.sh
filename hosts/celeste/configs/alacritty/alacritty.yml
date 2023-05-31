@@ -35,9 +35,8 @@ window:
 
 font:
   normal:
-    family: JetBrains Mono Nerd Font
-  size: 18
-
+    family: FantasqueSansM Nerd Font
+  size: 28
 
 cursor:
   style: Beam

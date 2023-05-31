@@ -172,7 +172,7 @@ with builtins; {
 
       eval "$(zoxide init posix --hook prompt)"
 
-      pfetch
+      neofetch
     '';
   };
 }

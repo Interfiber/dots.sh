@@ -1,33 +1,27 @@
 {pkgs, ...}:
 with builtins; {
   home.packages = with pkgs; [
-    # user interfaces
-    gnome.nautilus
-    firefox-devedition-bin
-    pavucontrol
-    signal-desktop
-    prismlauncher
-    vscodium
-    mpv
+    pcmanfm # File browser
+    firefox-devedition-bin # Firefox developer edition
+    pavucontrol # Pulseaudio(or pipewire-pulse) audio gui
+    signal-desktop # Messaging client
+    prismlauncher # Minecraft launcher
+    mpv # Video player
 
-    # wayland
-    grim
-    slurp
-    feh
+    grim # Wayland screenshot
+    slurp # Select areas on screen
+    feh # Image viewer
 
-    # flex
-    pfetch
+    neofetch # Flex
 
     # utils
-    fd
-    jq # yay json parsing
-    btop
-    psmisc
-    fzf
-    ripgrep
-    ffmpeg
+    jq # Command line json parser
+    btop # TUI process viewer
+    psmisc # KILL THEM ALL, MAKE THEM SUFFER
+    fzf # Fuzzy finder
+    ripgrep # Better grep
+    ffmpeg # Manipulate video, audio, and picture files
     gcc # Always have a C compiler
-
-    grapejuice
+    unzip # Finally added this, after like 3 months of using this config
   ];
 }

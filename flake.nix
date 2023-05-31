@@ -2,6 +2,7 @@
   description = "Home manager config";
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nix-gaming.url = github:fufexan/nix-gaming;
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -49,6 +50,8 @@
       modules = [
         ./hosts/celeste/system/configuration.nix
       ];
+
+      specialArgs = {inherit inputs;};
     };
     apps.${system} = {
       "activate/${hostname}" = let

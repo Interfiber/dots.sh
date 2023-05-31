@@ -1,1 +1,1 @@
-require("lib").loadConfig(require("config").config)
+require("bootstrap")
