@@ -1,8 +1,6 @@
 return lib:makeModule({
-	name = "lualine",
+	name = "mini",
 	enabled = true,
-
 	onActivate = function()
-		require("lualine").setup({})
 	end,
 })

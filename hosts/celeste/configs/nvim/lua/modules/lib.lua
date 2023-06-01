@@ -150,9 +150,9 @@ function m:makeLanguageServers(serverList)
 
 			require("lspconfig")[serverName].setup({
 				capabilities = capabilities,
-				on_attach = function (client)
+				on_attach = function(client)
 					lspformat.on_attach(client)
-				end
+				end,
 			})
 		end
 	end

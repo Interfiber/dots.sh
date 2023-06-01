@@ -1,7 +1,7 @@
 return lib:makeConfig({
 	editor = {
 		colorscheme = lib:makeColorscheme({
-			name = "zenbones", -- colorscheme name
+			name = "rosebones", -- colorscheme name
 			background = "dark", -- vim.opt.background
 			setupType = "default", -- default or function
 		}),
@@ -25,14 +25,14 @@ return lib:makeConfig({
 		"clangd",
 		"rust_analyzer",
 		"tsserver",
-		"lua_ls"
+		"lua_ls",
 	}),
 	modules = require("user.modules"),
 	packages = lib:makePackageList({
-		"mcchrish/zenbones.nvim", -- Colors
+		"echasnovski/mini.nvim", -- Nice stuff
 		{
 			"mcchrish/zenbones.nvim", -- Colors
-			dependencies = { "rktjmp/lush.nvim" }
+			dependencies = { "rktjmp/lush.nvim" },
 		},
 		"nvim-tree/nvim-web-devicons", -- Nerd font icon support
 		{

@@ -11,7 +11,7 @@ stdenv.mkDerivation rec {
 
   src = fetchzip {
     url = "https://github.com/decaycs/decay-gtk/archive/refs/heads/main.zip";
-    sha256 = "sha256-vaLwt8PtS2HL/MXYuHrx1MgDMf8urWJNsLJ2BDClLFI=";
+    sha256 = "sha256-Y/zw/UY17hJXGowoEG1e4HOm/4puSDFNRjV4ad+E508=";
     stripRoot = false;
   };
 
