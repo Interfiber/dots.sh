@@ -7,6 +7,7 @@
 </h1>
 
 ![](./assets/preview.png)
+![](./assets/neovim.png)
 
 ## 📦 Contents
 
