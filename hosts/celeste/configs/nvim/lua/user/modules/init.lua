@@ -3,8 +3,8 @@ return lib:makeModuleList({
 	"user.modules.treesitter",
 	"user.modules.nvimtree",
 	"user.modules.cmp",
-	"user.modules.bbq",
-	"user.modules.autopairs",
 	"user.modules.todo",
-	"user.modules.mini"
+	"user.modules.bufferline",
+	"user.modules.alpha",
+	"user.modules.lualine"
 })

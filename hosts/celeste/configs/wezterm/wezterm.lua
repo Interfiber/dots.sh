@@ -38,8 +38,8 @@ return {
 	-- Wayland
 	enable_wayland = false,
 
-  -- Colors
-  colors = {
+	-- Colors
+	colors = {
 		foreground = "#dcd7ba",
 		background = "#1f1f28",
 

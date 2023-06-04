@@ -10,7 +10,6 @@
 
 ## 📦 Contents
 
-
 - [hosts](hosts) Modules for each host
   - [celeste](hosts/celeste) Module for celeste
     - [modules](hosts/celeste/modules) Home manager modules

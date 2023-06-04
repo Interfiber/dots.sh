@@ -11,7 +11,6 @@ with builtins; {
     grim # Wayland screenshot
     slurp # Select areas on screen
     feh # Image viewer
-
     neofetch # Flex
 
     # utils
