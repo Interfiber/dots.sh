@@ -217,6 +217,7 @@ return lib:makeModule({
 		})
 
 		-- Now don't forget to initialize lualine
+		print("Started lualine")
 		lualine.setup(config)
 	end,
 })

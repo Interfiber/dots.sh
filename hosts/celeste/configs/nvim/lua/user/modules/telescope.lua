@@ -18,7 +18,7 @@ return lib:makeModule({
 			TelescopePromptBorder = { bg = bg, fg = bg },
 			TelescopeResultsBorder = { bg = bg, fg = bg },
 			TelescopePreviewBorder = { bg = bg, fg = bg },
-			TelescopePromptTitle = { bg = bg, fg = fg },
+			TelescopePromptTitle = { bg = "#0195F7", fg = "#FFFFFF" },
 			TelescopeResultsTitle = { fg = fg },
 			TelescopePreviewTitle = { bg = bg, fg = bg },
 		}
