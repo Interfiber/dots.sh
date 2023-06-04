@@ -4,21 +4,19 @@ return lib:makeModule({
 	onActivate = function()
 		local lualine = require("lualine")
 
--- Color table for highlights
--- stylua: ignore
-local colors = {
-  bg       = '#16161C',
-  fg       = '#8B8D8F',
-  yellow   = '#FAC29A',
-  cyan     = '#25B2BC',
-  darkblue = '#214a63',
-  green    = '#09F7A0',
-  orange   = '#F09383',
-  violet   = '#042E48',
-  magenta  = '#0195F7',
-  blue     = '#6C6F93',
-  red      = '#E95678',
-}
+		local colors = {
+			bg = "#1D1F27",
+			fg = "#8B8D8F",
+			yellow = "#FAC29A",
+			cyan = "#25B2BC",
+			darkblue = "#214a63",
+			green = "#09F7A0",
+			orange = "#F09383",
+			violet = "#042E48",
+			magenta = "#0195F7",
+			blue = "#6C6F93",
+			red = "#E95678",
+		}
 
 		local conditions = {
 			buffer_not_empty = function()
