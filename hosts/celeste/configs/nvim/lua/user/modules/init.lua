@@ -6,5 +6,5 @@ return lib:makeModuleList({
 	"user.modules.todo",
 	"user.modules.bufferline",
 	"user.modules.alpha",
-	"user.modules.lualine"
+	"user.modules.lualine",
 })

@@ -18,8 +18,8 @@ function m:makeLanguageServerPackages()
 			config = function()
 				require("lspsaga").setup({
 					ui = {
-						title = false
-					}
+						title = false,
+					},
 				})
 			end,
 			dependencies = {
@@ -36,7 +36,7 @@ function m:makeColorschemePackages()
 		"savq/melange-nvim", -- Colors 0
 		"NTBBloodbath/doom-one.nvim", -- Colors 1
 		"catppuccin/nvim", -- Colors 2
-		"LunarVim/horizon.nvim" -- Colors 3
+		"LunarVim/horizon.nvim", -- Colors 3
 	}
 end
 

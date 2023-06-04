@@ -8,7 +8,7 @@ return lib:makeConfig({
 				require("horizon").setup({})
 
 				-- Italic comments
-				vim.api.nvim_set_hl(0, 'Comment', { italic=true, fg = "#4B4C53", bg = "NONE" })
+				vim.api.nvim_set_hl(0, "Comment", { italic = true, fg = "#4B4C53", bg = "NONE" })
 			end,
 		}),
 		keybinds = lib:makeEditorKeybinds({
