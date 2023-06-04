@@ -18,11 +18,11 @@ return lib:makeConfig({
 			{ binding = "<Leader>h", action = ":bprev" },
 			{ binding = "<Leader>l", action = ":bnext" },
 			{ binding = "<Leader>g", action = ":Telescope grep_string" },
-			{ binding = "gr", action = ":Lspsaga rename" },
-			{ binding = "gh", action = ":Lspsaga lsp_finder" },
-			{ binding = "K", action = ":Lspsaga hover_doc ++keep" },
-			{ binding = "tt", action = ":Lspsaga term_toggle" },
-			{ binding = "gt", action = ":Lspsaga show_workspace_diagnostics" },
+			{ binding = "gr",        action = ":Lspsaga rename" },
+			{ binding = "gh",        action = ":Lspsaga lsp_finder" },
+			{ binding = "K",         action = ":Lspsaga hover_doc ++keep" },
+			{ binding = "tt",        action = ":Lspsaga term_toggle" },
+			{ binding = "gt",        action = ":Lspsaga show_workspace_diagnostics" },
 		}),
 		settings = lib:makeEditorSettings({
 			lineNumbers = true,
@@ -43,9 +43,9 @@ return lib:makeConfig({
 	modules = require("user.modules"),
 	packages = lib:makePackageList({
 		utils:makeColorschemePackages(),
-		"akinsho/bufferline.nvim", -- Tab bar
-		"nvim-lualine/lualine.nvim", -- Status line
-		"goolord/alpha-nvim", -- Startup screen
+		"akinsho/bufferline.nvim",    -- Tab bar
+		"nvim-lualine/lualine.nvim",  -- Status line
+		"goolord/alpha-nvim",         -- Startup screen
 		"nvim-tree/nvim-web-devicons", -- Nerd font icon support
 		{
 			"nvim-telescope/telescope.nvim", -- Fuzzy finder
@@ -61,8 +61,8 @@ return lib:makeConfig({
 				"MunifTanjim/nui.nvim",
 			},
 		},
-		"folke/todo-comments.nvim", -- TODO, HACK, BUG, FIXME, etc comments
+		"folke/todo-comments.nvim",  -- TODO, HACK, BUG, FIXME, etc comments
 		"lukas-reineke/lsp-format.nvim", -- Auto format files with the LSP server on save
-		utils:makeLanguageServerPackages(),
+		utils:makeLanguageServerPackages()
 	}),
 })

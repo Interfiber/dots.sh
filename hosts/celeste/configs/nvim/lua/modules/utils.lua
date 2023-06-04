@@ -12,6 +12,7 @@ function m:makeLanguageServerPackages()
 		"dcampos/nvim-snippy",
 		"hrsh7th/nvim-cmp",
 		"onsails/lspkind.nvim",
+		"windwp/nvim-autopairs",
 		{
 			"glepnir/lspsaga.nvim",
 			event = "LspAttach",
@@ -33,10 +34,10 @@ end
 
 function m:makeColorschemePackages()
 	return {
-		"savq/melange-nvim", -- Colors 0
+		"savq/melange-nvim",      -- Colors 0
 		"NTBBloodbath/doom-one.nvim", -- Colors 1
-		"catppuccin/nvim", -- Colors 2
-		"LunarVim/horizon.nvim", -- Colors 3
+		"catppuccin/nvim",        -- Colors 2
+		"LunarVim/horizon.nvim",  -- Colors 3
 	}
 end
 

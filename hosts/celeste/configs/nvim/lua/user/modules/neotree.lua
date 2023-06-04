@@ -18,20 +18,6 @@ return lib:makeModule({
         nesting_rules = {
           ['dart'] = { 'freezed.dart', 'g.dart' },
         },
-        event_handlers = {
-          {
-            event = 'neo_tree_buffer_enter',
-            handler = function() highlight.set('Cursor', { blend = 100 }) end,
-          },
-          {
-            event = 'neo_tree_buffer_leave',
-            handler = function() highlight.set('Cursor', { blend = 0 }) end,
-          },
-          {
-            event = 'neo_tree_window_after_close',
-            handler = function() highlight.set('Cursor', { blend = 0 }) end,
-          },
-        },
         filesystem = {
           hijack_netrw_behavior = 'open_current',
           use_libuv_file_watcher = true,
@@ -51,34 +37,8 @@ return lib:makeModule({
           },
         },
         default_component_configs = {
-          icon = {
-            folder_empty = icons.documents.open_folder,
-          },
           name = {
             highlight_opened_files = true,
-          },
-          document_symbols = {
-            follow_cursor = true,
-            kinds = as.fold(function(acc, v, k)
-              acc[k] = { icon = v, hl = lsp_kinds[k] }
-              return acc
-            end, symbols),
-          },
-          modified = {
-            symbol = icons.misc.circle .. ' ',
-          },
-          git_status = {
-            symbols = {
-              added = icons.git.add,
-              deleted = icons.git.remove,
-              modified = icons.git.mod,
-              renamed = icons.git.rename,
-              untracked = icons.git.untracked,
-              ignored = icons.git.ignored,
-              unstaged = icons.git.unstaged,
-              staged = icons.git.staged,
-              conflict = icons.git.conflict,
-            },
           },
         },
         window = {
