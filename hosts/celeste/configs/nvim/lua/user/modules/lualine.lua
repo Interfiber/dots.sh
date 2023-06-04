@@ -12,7 +12,7 @@ return lib:makeModule({
 			darkblue = "#214a63",
 			green = "#09F7A0",
 			orange = "#F09383",
-			violet = "#042E48",
+			violet = "#ff007c",
 			magenta = "#0195F7",
 			blue = "#6C6F93",
 			red = "#E95678",

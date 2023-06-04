@@ -6,5 +6,6 @@ return lib:makeModuleList({
 	"user.modules.bufferline",
 	"user.modules.alpha",
 	"user.modules.lualine",
-	"user.modules.neotree"
+	"user.modules.neotree",
+	"user.modules.autopairs"
 })

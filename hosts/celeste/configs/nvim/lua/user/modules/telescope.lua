@@ -8,7 +8,7 @@ return lib:makeModule({
 
 		local TelescopeColor = {
 			TelescopeMatching = { fg = fg },
-			TelescopeSelection = { fg = "#8B8D8F", bg = bg, bold = true },
+			TelescopeSelection = { fg = "#FFFFFF", bg = bg, bold = true },
 			TelescopeSelectionCaret = { fg = "#8B8D8f", bg = bg, bold = true },
 
 			TelescopePromptPrefix = { bg = bg },
@@ -18,7 +18,7 @@ return lib:makeModule({
 			TelescopePromptBorder = { bg = bg, fg = bg },
 			TelescopeResultsBorder = { bg = bg, fg = bg },
 			TelescopePreviewBorder = { bg = bg, fg = bg },
-			TelescopePromptTitle = { bg = "#0195F7", fg = "#FFFFFF" },
+			TelescopePromptTitle = { bg = bg, fg = fg },
 			TelescopeResultsTitle = { fg = fg },
 			TelescopePreviewTitle = { bg = bg, fg = bg },
 		}
@@ -27,6 +27,8 @@ return lib:makeModule({
 			vim.api.nvim_set_hl(0, hl, col)
 		end
 
-		require("telescope").setup({})
+		require("telescope").setup({
+			  extensions_list = { "themes", "terms" }
+		})
 	end,
 })

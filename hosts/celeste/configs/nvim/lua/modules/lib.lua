@@ -106,13 +106,13 @@ function m:makeEditorSettings(conf)
 		-- I had to hardcode all of these :(
 
 		vim.wo.relativenumber = conf.relativeLineNumbers -- Relative line numbers
-		vim.wo.number = conf.lineNumbers -- Line numbers
-		vim.opt.termguicolors = conf.termGuiColors -- Term GUI colors
-		vim.opt.tabstop = conf.tabSize -- Tab size
-		vim.opt.softtabstop = conf.tabSize -- Tab size
-		vim.opt.shiftwidth = conf.tabSize -- Tab size
-		vim.opt.expandtab = false -- Don't turn tabs into ugly spaces
-		vim.g.mapleader = conf.leader -- Leader key, comes before every keybind(if mapped with it)
+		vim.wo.number = conf.lineNumbers             -- Line numbers
+		vim.opt.termguicolors = conf.termGuiColors   -- Term GUI colors
+		vim.opt.tabstop = conf.tabSize               -- Tab size
+		vim.opt.softtabstop = conf.tabSize           -- Tab size
+		vim.opt.shiftwidth = conf.tabSize            -- Tab size
+		vim.opt.expandtab = false                    -- Don't turn tabs into ugly spaces
+		vim.g.mapleader = conf.leader                -- Leader key, comes before every keybind(if mapped with it)
 	end
 
 	return settings
@@ -128,7 +128,11 @@ function m:makeEditorKeybinds(binds)
 
 	function bindings:apply()
 		for _, bind in pairs(binds) do
-			vim.api.nvim_set_keymap("n", bind.binding, bind.action .. "<CR>", { noremap = true })
+			if type(bind.action) == "string" then
+				vim.api.nvim_set_keymap("n", bind.binding, bind.action .. "<CR>", { noremap = true })
+			else
+				vim.keymap.set("n", bind.binding, bind.action, { noremap = true })
+			end
 		end
 	end
 

@@ -23,6 +23,18 @@ return lib:makeConfig({
 			{ binding = "K",         action = ":Lspsaga hover_doc ++keep" },
 			{ binding = "tt",        action = ":Lspsaga term_toggle" },
 			{ binding = "gt",        action = ":Lspsaga show_workspace_diagnostics" },
+			{
+				binding = "gd",
+				action = function()
+					vim.lsp.buf.definition()
+				end
+			},
+			{
+				binding = "gv",
+				action = function()
+					vim.lsp.buf.code_action()
+				end
+			}
 		}),
 		settings = lib:makeEditorSettings({
 			lineNumbers = true,
@@ -63,6 +75,7 @@ return lib:makeConfig({
 		},
 		"folke/todo-comments.nvim",  -- TODO, HACK, BUG, FIXME, etc comments
 		"lukas-reineke/lsp-format.nvim", -- Auto format files with the LSP server on save
+		"j-hui/fidget.nvim",         -- LSP server progress
 		utils:makeLanguageServerPackages()
 	}),
 })
